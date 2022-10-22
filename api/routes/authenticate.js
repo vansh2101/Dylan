@@ -16,7 +16,7 @@ router.get('/', (req, res) => {
 });
 
 
-router.post('/login', passport.authenticate('local',{
+router.post('/login', ()=> {console.log('logging in')}, passport.authenticate('local',{
     successRedirect: '/',
     failureRedirect: '/auth',
     failureFlash: true,
@@ -46,17 +46,20 @@ router.post('/register', function (req, res) {
                                 password: hashed_pass,
                             });
                             data.save();
+                            console.log('User Registered Successfully!!')
                             req.flash('msg', 'User Registered Successfully!!')
                             res.redirect('/login')
                         }
 
                         else{
+                            console.log('Passwords don\'t match');
                             req.flash('msg', 'Passwords don\'t match')
                             res.redirect('/register')
                         }
                     }
 
                     else {
+                        console.log('An Account with this email already exist');
                         req.flash('msg', 'An Account with this email already exist')
                         res.redirect('/register')
                     }
@@ -64,6 +67,7 @@ router.post('/register', function (req, res) {
             }
 
             else {
+                console.log('Username Taken');
                 req.flash('msg', 'Username Taken')
                 res.redirect('/register')
             }

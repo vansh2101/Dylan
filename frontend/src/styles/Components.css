@@ -1,0 +1,27 @@
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+li{
+    list-style: none;
+    padding-left: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: "poppins";
+}
+button{
+    margin-left: 20px;
+    background-color: #8C3ECF;
+    font-weight: 600;
+    color: white;
+    width: 120px;
+    height: 35px;
+    border-radius: 5px;
+    font-size: 14px;
+}

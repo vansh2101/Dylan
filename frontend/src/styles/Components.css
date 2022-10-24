@@ -2,26 +2,30 @@ nav{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-top: 15px;
 }
 ul{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 50%;
+    font-size: 0.92vw;
+    list-style-type: none;
 }
-li{
-    list-style: none;
+li a{
     padding-left: 20px;
-    font-size: 14px;
     font-weight: 600;
     font-family: "poppins";
+    color: white;
+    text-decoration: none;
 }
 button{
     margin-left: 20px;
-    background-color: #8C3ECF;
+    background: linear-gradient(90deg, #8C3ECF 0%, #615ACF 52.08%, #4C7FED 100%);
     font-weight: 600;
     color: white;
-    width: 120px;
+    width: 130px;
     height: 35px;
     border-radius: 5px;
-    font-size: 14px;
+    font-size: 0.92vw;
 }

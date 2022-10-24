@@ -1,16 +1,31 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;1,500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,700;1,500&display=swap');
+
+*{
+    font-family: 'poppins';
+}
+
 body{
     background-color: #121212;
     margin: auto;
-    max-width: 85%;
+    max-width: 90%;
     color: white;
-    font-family: "poppins";
 }
 .gradient{
     background: linear-gradient(90deg, #8C3ECF 0%, #615ACF 52.08%, #4C7FED 100%);
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
+    background-clip: text;
 }
 
+
+button{
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+button:hover{
+    transform: translateY(-2px);
+}

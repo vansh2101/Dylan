@@ -1,4 +1,3 @@
-import {Route , Routes} from 'react-router-dom'
 import '../styles/Components.css'
 const Navbar = () => {
   return (
@@ -8,10 +7,10 @@ const Navbar = () => {
           dylan
         </div>
         <ul>
-          <li>About us</li>
-          <li>My mixes</li>
-          <li>The experience</li>
-          <li>Contacts</li>
+          <li><a href='#'>About us</a></li>
+          <li><a href='#'>My mixes</a></li>
+          <li><a href='#'>The experience</a></li>
+          <li><a href='#'>Contacts</a></li>
           <button>Community</button>
         </ul>
       </nav>

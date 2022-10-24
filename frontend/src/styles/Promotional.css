@@ -1,20 +1,28 @@
+.home{
+    margin-top: 5%;
+}
+
 .heading{
     display: flex;
     justify-content: center;
-    margin-top: 60px;
     padding: 0;
     flex-direction: column;
 }
 .heading h1{
     margin: 0;
+    margin-bottom: -20px;
     padding: 0;
-    font-size: 40px;
+    font-size: 3vw;
 }
-.gradient{
-    font-size: 65px !important;
+.big{
+    font-size: 4.5vw !important;
+}
+.dylan{
+    width: 50%;
 }
 .dylan p{
-    max-width: 500px;
+    width: 80%;
+    font-size: 1.3vw;
 }
 .italic{
     font-style: italic;
@@ -22,6 +30,7 @@
 .flexi{
     display: flex;
     align-items: center;
+    margin-top: 2.5%;
 }
 .img1{
     width: 40px;
@@ -34,14 +43,27 @@
     margin-left: 20px;
 }
 .line{
-    max-width: 105%;
+    width: 110%;
+    margin-left: -5%;
+    margin-top: 5%;
+
 }
 .about{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 50px;
+    margin-top: 4%;
 }
 .about img{
-    width: 500px;
+    width: 98%;
+    margin: auto;
+}
+
+.abt h1{
+    font-size: 3vw;
+}
+.abt p{
+    margin-top: 3%;
+    font-size: 1.3vw;
+    width: 95%;
 }

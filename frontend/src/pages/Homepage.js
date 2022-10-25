@@ -5,7 +5,11 @@ import records from '../static/records.jpg'
 import records2 from '../static/records2.png'
 import line from '../static/line.png'
 import about from '../static/about.png'
-
+import headphones from '../static/headphones.png'
+import card from '../static/card.png'
+import party from '../static/party.png'
+import mix1 from '../static/mix1.png'
+import { AiFillPlayCircle } from 'react-icons/ai';
 const Homepage = () => {
   return (
     <>
@@ -41,6 +45,65 @@ const Homepage = () => {
     </div>
 
     <img src={line} className="line" />
+
+    <div className="process">
+    <div className="ourprocess">
+            <h1><span className='gradient'>OUR PROCESS</span></h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui </p>
+        </div>
+        <div className="cards">
+          <div className="card">
+            <img src={headphones} alt="" />
+            <p>Choose a service</p>
+          </div>
+          <div className="card">
+            <img src={card} alt="" />
+            <p>Make a payment</p>
+          </div>
+          <div className="card">
+            <img src={[party]} alt="" />
+            <p>Enjoy your event</p>
+          </div>
+        </div>
+    </div>
+    <img src={line} className="line" />
+    <div className="mixes">
+    <div className="mymixes">
+            <h1><span className='gradient'>My mixes</span></h1>
+        </div>
+        <div className="box">
+          <div className="sbox">
+            <div className='player'>
+            <div className="column">
+              <p>Demons Protected By angels </p>
+              <p>Nav, Dylan</p>
+            </div>
+            <div className="play">
+              <AiFillPlayCircle size={40}/>
+            </div>   
+                     </div>
+
+          </div>
+          <div className="sbox">
+            <div className="column">
+              <p>Demons Protected By angels </p>
+              <p>Nav, Dylan</p>
+            </div>
+            <div className="play">
+              <AiFillPlayCircle/>
+            </div>
+          </div>
+          <div className="sbox">
+            <div className="column">
+              <p>Demons Protected By angels </p>
+              <p>Nav, Dylan</p>
+            </div>
+            <div className="play">
+              <AiFillPlayCircle/>
+            </div>
+          </div>
+        </div>
+    </div>
     </>
   )
 }

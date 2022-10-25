@@ -56,14 +56,94 @@
 }
 .about img{
     width: 98%;
-    margin: auto;
+    padding-top: 50px;
 }
 
 .abt h1{
-    font-size: 3vw;
+    font-size: 3.5vw;
 }
 .abt p{
     margin-top: 3%;
-    font-size: 1.3vw;
+    font-size: 1.2vw;
     width: 95%;
+}
+.ourprocess p{
+    max-width: 80%;
+}
+.cards{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 50px;
+}
+.card{
+    width: 320px;
+    height: 110px;
+}
+.card img{
+    width: 40px;
+}
+.card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(50, 54, 69, 0.47);
+    color: #FFFFFF;
+    border-radius: 20px;
+}
+.card p{
+    font-size: 1.3rem;
+    padding-left: 25px;
+    font-weight: 500;
+    font-family: poppins;
+}
+.ourprocess h1{
+    font-size: 3.5vw;
+}
+.box{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
+}
+.sbox{
+    background-image: url(../static/mix1.png);
+    width: 350px;
+    height: 340px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+.column{
+    display: flex;
+    justify-content: center;
+    margin-top: auto;
+    flex-direction: column;
+    margin-left: 0;
+}
+.play{
+    margin-top: auto;
+    /* margin-left: 20px; */
+    /* background: rgba(18, 18, 18, 0.66); */
+    /* backdrop-filter: blur(3px); */
+    border-radius: 20px;
+    padding-left: 20px;
+    padding-top: 10px;
+}
+.player{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 85%;
+    /* background-color: black; */
+    height: 55px;
+    margin: auto;
+    margin-top: 77%;
+    padding-bottom: 5px;
+    border-radius: 20px;
+    background: rgba(18, 18, 18, 0.66);
+    backdrop-filter: blur(3px);
+}
+.column p{
+    font-size: 0.8rem;
+    margin-left: 5px;
 }

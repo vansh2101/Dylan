@@ -29,3 +29,19 @@ button{
 button:hover{
     transform: translateY(-2px);
 }
+
+
+
+body::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    /* background: #fff; */
+    background: #f0f0f0;
+  }
+  ::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background: linear-gradient(90deg, #8C3ECF 0%, #615ACF 52.08%, #4C7FED 100%);
+    -webkit-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+  }

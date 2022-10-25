@@ -38,6 +38,8 @@ app.use(passport.session());
 
 //? Routes
 app.use('/auth', require('./routes/authenticate'))
+app.use('/groovy', require('./routes/groovy'))
+app.use('/posts', require('./routes/posts'))
 
 
 app.listen(8000, () => {

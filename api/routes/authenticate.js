@@ -12,11 +12,11 @@ const router = express.Router();
 
 //? Routes
 router.get('/', (req, res) => {
-    res.send('Home');
+    res.send('Authentication');
 });
 
 
-router.post('/login', ()=> {console.log('logging in')}, passport.authenticate('local',{
+router.post('/login', passport.authenticate('local',{
     successRedirect: '/',
     failureRedirect: '/auth',
     failureFlash: true,
@@ -25,7 +25,6 @@ router.post('/login', ()=> {console.log('logging in')}, passport.authenticate('l
 
 router.delete('/logout', (req,res) => {
     req.logOut();
-    res.redirect('/');
 });
 
 
@@ -47,34 +46,30 @@ router.post('/register', function (req, res) {
                             });
                             data.save();
                             console.log('User Registered Successfully!!')
-                            req.flash('msg', 'User Registered Successfully!!')
-                            res.redirect('/login')
+                            res.json({'msg':'User Registered Successfully!!'})
                         }
 
                         else{
                             console.log('Passwords don\'t match');
-                            req.flash('msg', 'Passwords don\'t match')
-                            res.redirect('/register')
+                            res.json({'msg':'Passwords don\'t match'})
                         }
                     }
 
                     else {
                         console.log('An Account with this email already exist');
-                        req.flash('msg', 'An Account with this email already exist')
-                        res.redirect('/register')
+                        res.json({'msg':'An Account with this email already exist'})
                     }
                 })
             }
 
             else {
                 console.log('Username Taken');
-                req.flash('msg', 'Username Taken')
-                res.redirect('/register')
+                res.json({'msg':'Username Taken'})
             }
         })
     }
     catch {
-        res.redirect('/register')
+        res.json({'msg': 'some error occured'})
     };
 });
 

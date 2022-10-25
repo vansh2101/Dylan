@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import '../styles/Account.css'
 const Register = () => {
   return (
@@ -5,7 +6,7 @@ const Register = () => {
     <div className='main'>
         <div className="form">
             <h1>Create a new Account<span className='gradient'>.</span></h1>
-            <p className='account-text'>Aleardy a Member? <a href='#'>Log in</a></p>
+            <p className='account-text'>Aleardy a Member? <Link to='/login'>Log in</Link></p>
             <form action="">
                 <input type="text" placeholder='Username'/>
                 <input type="text" placeholder='Name'/>

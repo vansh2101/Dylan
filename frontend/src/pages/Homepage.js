@@ -14,7 +14,7 @@ const Homepage = () => {
   return (
     <>
     <Navbar/>
-    <div className='home'>
+    <div className='home' id='home'>
         <div className="dylan">
             <div className="heading">
             <h1>The Dylan</h1>
@@ -32,7 +32,7 @@ const Homepage = () => {
         </div>
     </div>
 
-    <img src={line} className="line" />
+    <img src={line} className="line" id='about' />
 
     <div className='about'>
         <div className="dylan abt">

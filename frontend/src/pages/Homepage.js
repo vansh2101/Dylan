@@ -9,10 +9,12 @@ import headphones from '../static/headphones.png'
 import card from '../static/card.png'
 import party from '../static/party.png'
 import mix1 from '../static/mix1.png'
+import logo from '../static/logo.png'
 import { AiFillPlayCircle } from 'react-icons/ai';
+
 const Homepage = () => {
   return (
-    <>
+    <main>
     <Navbar/>
     <div className='home' id='home'>
         <div className="dylan">
@@ -30,6 +32,8 @@ const Homepage = () => {
             <br />
             <p className='italic'>“Three days of partying, sucking, and fucking on a plot of land so far out, Nevada barely wants it.”</p>
         </div>
+
+        <img src={logo} id='logo' />
     </div>
 
     <img src={line} className="line" id='about' />
@@ -44,7 +48,7 @@ const Homepage = () => {
         </div>
     </div>
 
-    <img src={line} className="line" />
+    <img src={line} className="line" id='process' />
 
     <div className="process">
     <div className="ourprocess">
@@ -66,7 +70,9 @@ const Homepage = () => {
           </div>
         </div>
     </div>
-    <img src={line} className="line" />
+
+    <img src={line} className="line" id='mixes' />
+
     <div className="mixes">
     <div className="mymixes">
             <h1><span className='gradient'>My mixes</span></h1>
@@ -85,13 +91,16 @@ const Homepage = () => {
 
           </div>
           <div className="sbox">
+            <div className='player'>
             <div className="column">
               <p>Demons Protected By angels </p>
               <p>Nav, Dylan</p>
             </div>
+            
             <div className="play">
-              <AiFillPlayCircle/>
+              <AiFillPlayCircle size={40}/>
             </div>
+          </div>
           </div>
           <div className="sbox">
             <div className="column">
@@ -104,7 +113,7 @@ const Homepage = () => {
           </div>
         </div>
     </div>
-    </>
+    </main>
   )
 }
 

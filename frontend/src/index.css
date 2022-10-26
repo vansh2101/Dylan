@@ -9,10 +9,14 @@
 
 body{
     background-color: #121212;
-    margin: auto;
-    max-width: 90%;
     color: white;
 }
+
+main{
+    max-width: 90%;
+    margin: auto;
+}
+
 .gradient{
     background: linear-gradient(90deg, #8C3ECF 0%, #615ACF 52.08%, #4C7FED 100%);
     -webkit-text-fill-color: transparent;

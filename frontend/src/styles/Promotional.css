@@ -1,5 +1,8 @@
 .home{
-    margin-top: 5%;
+    margin-top: 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .heading{
@@ -12,17 +15,21 @@
     margin: 0;
     margin-bottom: -20px;
     padding: 0;
-    font-size: 3vw;
+    font-size: 2.6vw;
 }
 .big{
-    font-size: 4.5vw !important;
+    font-size: 4vw !important;
 }
 .dylan{
     width: 50%;
 }
+#logo{
+    width: 42%;
+    margin-right: 2%;
+}
 .dylan p{
     width: 80%;
-    font-size: 1.3vw;
+    font-size: 1.1vw;
 }
 .italic{
     font-style: italic;
@@ -55,26 +62,23 @@
     margin-top: 4%;
 }
 .about img{
-    width: 98%;
-    padding-top: 50px;
+    width: 92%;
+    margin-top: 50px;
 }
 
-.abt h1{
-    font-size: 3.5vw;
+.abt h1, .ourprocess h1, .mymixes h1{
+    font-size: 3.2vw;
 }
-.abt p{
+.abt p, .ourprocess p{
     margin-top: 3%;
-    font-size: 1.2vw;
-    width: 95%;
-}
-.ourprocess p{
-    max-width: 80%;
+    font-size: 1.1vw;
+    width: 92%;
 }
 .cards{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 50px;
+    margin-top: 6%;
 }
 .card{
     width: 320px;
@@ -96,9 +100,6 @@
     padding-left: 25px;
     font-weight: 500;
     font-family: poppins;
-}
-.ourprocess h1{
-    font-size: 3.5vw;
 }
 .box{
     display: flex;

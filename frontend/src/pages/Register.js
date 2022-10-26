@@ -1,9 +1,12 @@
 import { Link } from 'react-router-dom'
 import '../styles/Account.css'
+import logo from '../static/logo.png';
+
 const Register = () => {
   return (
-    <>
+    <main>
     <div className='main'>
+      <Link to='/'><img src={logo} className='mylogo' /></Link>
         <div className="form">
             <h1>Create a new Account<span className='gradient'>.</span></h1>
             <p className='account-text'>Aleardy a Member? <Link to='/login'>Log in</Link></p>
@@ -16,7 +19,7 @@ const Register = () => {
             </form>
           </div>          
         </div>
-        </>
+        </main>
   )
 }
 

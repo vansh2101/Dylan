@@ -51,8 +51,8 @@ const Login = () => {
               </div>
               : <></>}
 
-                <input type="username" id='username' placeholder='Enter your username' required/>
-                <input type="password" id='pass' placeholder='Password' required/>
+                <input type="username" id='username' placeholder='Enter your username' required className='input'/>
+                <input type="password" id='pass' placeholder='Password' required className='input'/>
                 <a href='#'>Forgot Password?</a><br />
                 <button className="account">Log in</button>
             </form>

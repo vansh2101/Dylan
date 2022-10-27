@@ -3,7 +3,7 @@ import Register from './pages/Register';
 import Login from './pages/Login';
 import Homepage from './pages/Homepage';
 import Groovy from "./pages/Groovy";
-
+import Community from "./pages/Community";
 function App() {
   return (
     <>
@@ -13,6 +13,7 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
           <Route path="/groovy" element={<Groovy />} />
+          <Route path="/community" element={<Community />} />
         </Routes>
     </BrowserRouter>
     </>

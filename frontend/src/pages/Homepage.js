@@ -8,10 +8,8 @@ import about from '../static/about.png'
 import headphones from '../static/headphones.png'
 import card from '../static/card.png'
 import party from '../static/party.png'
-import mix1 from '../static/mix1.png'
 import logo from '../static/logo.png'
 import { AiFillPlayCircle } from 'react-icons/ai';
-
 const Homepage = () => {
   return (
     <main>
@@ -82,7 +80,7 @@ const Homepage = () => {
             <div className='player'>
             <div className="column">
               <p>Demons Protected By angels </p>
-              <p>Nav, Dylan</p>
+              <p className='color'>Nav, Dylan</p>
             </div>
             <div className="play">
               <AiFillPlayCircle size={40}/>
@@ -90,26 +88,29 @@ const Homepage = () => {
                      </div>
 
           </div>
-          <div className="sbox">
+          <div className="sbox2">
             <div className='player'>
             <div className="column">
               <p>Demons Protected By angels </p>
-              <p>Nav, Dylan</p>
+              <p className='color'>Nav, Dylan</p>
             </div>
-            
             <div className="play">
               <AiFillPlayCircle size={40}/>
-            </div>
+            </div>   
+                     </div>
+
           </div>
-          </div>
-          <div className="sbox">
+          <div className="sbox3">
+            <div className='player'>
             <div className="column">
               <p>Demons Protected By angels </p>
-              <p>Nav, Dylan</p>
+              <p className='color'>Nav, Dylan</p>
             </div>
             <div className="play">
-              <AiFillPlayCircle/>
-            </div>
+              <AiFillPlayCircle size={40}/>
+            </div>   
+                     </div>
+
           </div>
         </div>
     </div>

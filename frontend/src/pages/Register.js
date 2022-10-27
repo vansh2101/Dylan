@@ -53,10 +53,10 @@ const Register = () => {
               </div>
               : <></>}
 
-                <input type="text" id='username' placeholder='Username' required/>
-                <input type="text" id='name' placeholder='Name' required/>
-                <input type="email" id='email' placeholder='Enter your email address' required/>
-                <input type="password" id='pass' placeholder='Password' required/>
+                <input type="text" id='username' placeholder='Username' required className='input'/>
+                <input type="text" id='name' placeholder='Name' required className='input'/>
+                <input type="email" id='email' placeholder='Enter your email address' required className='input'/>
+                <input type="password" id='pass' placeholder='Password' required className='input'/>
                 <button className="account">Create Account</button>
             </form>
           </div>          

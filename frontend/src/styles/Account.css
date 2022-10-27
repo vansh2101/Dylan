@@ -90,3 +90,14 @@ p{
     top: 2.5%;
     left: 5.5%;
 }
+
+
+.error{
+    width: 97%;
+    background-color: rgb(255, 0, 0, 0.2);
+    padding: 10px 0;
+    border: 2px solid red;
+    border-radius: 15px;
+    color: rgb(223, 137, 137);
+    margin-bottom: 2%;
+}

@@ -1,10 +1,13 @@
+import React, {useState} from 'react'
 import { Link } from 'react-router-dom'
 import '../styles/Account.css'
 import logo from '../static/logo.png'
 
 const Register = () => {
 
-  const register = async (e) => {
+  const [msg, setMsg] = useState()
+
+  const register = (e) => {
     e.preventDefault()
 
     const data = {
@@ -23,7 +26,15 @@ const Register = () => {
         body: JSON.stringify(data)
     }
     ).then(res => res.json())
-    .then(data => {console.log(data)})
+    .then(data => {
+      console.log(data)
+      if(!data.error){
+        window.location = '/login'
+      }
+      else{
+        setMsg(data.msg)
+      }
+    })
 
   }
 
@@ -35,6 +46,13 @@ const Register = () => {
             <h1>Create a new Account<span className='gradient'>.</span></h1>
             <p className='account-text'>Aleardy a Member? <Link to='/login'>Log in</Link></p>
             <form action="" onSubmit={register}>
+
+              {msg?
+              <div className='error'>
+                {msg}
+              </div>
+              : <></>}
+
                 <input type="text" id='username' placeholder='Username' required/>
                 <input type="text" id='name' placeholder='Name' required/>
                 <input type="email" id='email' placeholder='Enter your email address' required/>

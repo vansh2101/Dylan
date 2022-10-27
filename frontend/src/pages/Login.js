@@ -1,10 +1,39 @@
+import React, {useState} from 'react'
 import { Link } from 'react-router-dom'
 import '../styles/Account.css'
 import logo from '../static/logo.png';
 
 const Login = () => {
 
-  const login = () => {}
+  const [msg, setMsg] = useState()
+
+  const login = (e) => {
+    e.preventDefault()
+
+    const data = {
+      username: document.getElementById('username').value,
+      password: document.getElementById('pass').value
+    }
+
+    fetch(
+      'http://localhost:8000/auth/login/',
+      {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(data)
+    }
+    ).then(res => {
+      if (res.ok){
+        if(res.url.endsWith('login')){
+          setMsg('Invalid Credentials')
+        }
+        else{
+          window.location = '/groovy'
+        }
+      }
+    })
+
+  }
 
   return (
     <>
@@ -15,8 +44,15 @@ const Login = () => {
             <h1>Login Now<span className='gradient'>.</span></h1>
             <p className='account-text'>Not a Member? <Link to='/register'>Sign Up</Link></p>
             <form action="" onSubmit={login}>
-                <input type="username" placeholder='Enter your username' required/>
-                <input type="password" placeholder='Password' required/>
+
+            {msg?
+              <div className='error'>
+                {msg}
+              </div>
+              : <></>}
+
+                <input type="username" id='username' placeholder='Enter your username' required/>
+                <input type="password" id='pass' placeholder='Password' required/>
                 <a href='#'>Forgot Password?</a><br />
                 <button className="account">Log in</button>
             </form>

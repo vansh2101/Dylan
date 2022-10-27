@@ -74,6 +74,11 @@
     font-size: 1.1vw;
     width: 92%;
 }
+
+.ourprocess p{
+    width: 73%;
+}
+
 .cards{
     display: flex;
     justify-content: space-between;

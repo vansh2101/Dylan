@@ -17,9 +17,10 @@ router.get('/', (req, res) => {
 
 
 router.post('/login', passport.authenticate('local',{
-    successRedirect: '/',
-    failureRedirect: '/auth',
+    successRedirect: 'http://localhost:3000/',
+    failureRedirect: 'http://localhost:3000/login',
     failureFlash: true,
+    failureMessage: true
 }));
 
 
@@ -46,30 +47,30 @@ router.post('/register', function (req, res) {
                             });
                             data.save();
                             console.log('User Registered Successfully!!')
-                            res.json({'msg':'User Registered Successfully!!'})
+                            res.json({'msg':'User Registered Successfully!!', 'error': false})
                         }
 
                         else{
                             console.log('Passwords don\'t match');
-                            res.json({'msg':'Passwords don\'t match'})
+                            res.json({'msg':'Passwords don\'t match', 'error': true})
                         }
                     }
 
                     else {
                         console.log('An Account with this email already exist');
-                        res.json({'msg':'An Account with this email already exist'})
+                        res.json({'msg':'An Account with this email already exist', 'error': true})
                     }
                 })
             }
 
             else {
                 console.log('Username Taken');
-                res.json({'msg':'Username Taken'})
+                res.json({'msg':'Username Taken', 'error': true})
             }
         })
     }
     catch {
-        res.json({'msg': 'some error occured'})
+        res.json({'msg': 'some error occured', 'error': true})
     };
 });
 

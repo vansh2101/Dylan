@@ -86,8 +86,8 @@
     margin-top: 6%;
 }
 .card{
-    width: 320px;
-    height: 110px;
+    width: 23%;
+    height: 12vh;
 }
 .card img{
     width: 40px;
@@ -117,34 +117,22 @@
     width: 350px;
     height: 340px;
     border-radius: 20px;
-    cursor: pointer;
-}
-.column{
-    display: flex;
-    justify-content: center;
-    margin-top: auto;
-    flex-direction: column;
-    margin-left: 0;
+    position: relative;
 }
 .play{
-    margin-top: auto;
-    /* margin-left: 20px; */
-    /* background: rgba(18, 18, 18, 0.66); */
-    /* backdrop-filter: blur(3px); */
-    border-radius: 20px;
-    padding-left: 20px;
-    padding-top: 10px;
+    display: flex;
+    align-items: center;
 }
 .player{
+    position: absolute;
+    bottom: 3.5%;
+    left: 6.5%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 85%;
-    /* background-color: black; */
+    width: 82%;
     height: 55px;
-    margin: auto;
-    margin-top: 77%;
-    padding-bottom: 5px;
+    padding: 0 10px;
     border-radius: 20px;
     background: rgba(18, 18, 18, 0.66);
     backdrop-filter: blur(3px);
@@ -152,4 +140,19 @@
 .column p{
     font-size: 0.8rem;
     margin-left: 5px;
+}
+
+.service-container{
+    display: flex;
+    justify-content: space-between;
+    width: 97%;
+    margin: auto;
+    margin-top: 4%;
+    margin-bottom: 3%;
+}
+.service{
+    width: 30%;
+}
+.service img{
+    width: 97%;
 }

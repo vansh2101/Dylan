@@ -1,59 +1,115 @@
-import React from 'react'
-import Navbar from '../components/Navbar'
-import '../styles/Promotional.css'
-import records from '../static/records.jpg'
-import records2 from '../static/records2.png'
-import line from '../static/line.png'
-import about from '../static/about.png'
-import headphones from '../static/headphones.png'
-import card from '../static/card.png'
-import party from '../static/party.png'
-import mix1 from '../static/mix1.png'
-import logo from '../static/logo.png'
-import { AiFillPlayCircle } from 'react-icons/ai';
+import React from "react";
+import Navbar from "../components/Navbar";
+import "../styles/Promotional.css";
+import records from "../static/records.jpg";
+import records2 from "../static/records2.png";
+import line from "../static/line.png";
+import about from "../static/about.png";
+import headphones from "../static/headphones.png";
+import card from "../static/card.png";
+import party from "../static/party.png";
+import service1 from "../static/service1.png";
+import service2 from "../static/service2.png";
+import service3 from "../static/service3.png";
+import logo from "../static/logo.png";
+import { AiFillPlayCircle } from "react-icons/ai";
 
 const Homepage = () => {
   return (
     <main>
-    <Navbar/>
-    <div className='home' id='home'>
+      <Navbar />
+      <div className="home" id="home">
         <div className="dylan">
-            <div className="heading">
+          <div className="heading">
             <h1>The Dylan</h1>
-            <h1><span className='gradient big'>Experience.</span></h1>
-            </div>
-            <div className='flexi'>
+            <h1>
+              <span className="gradient big">Experience.</span>
+            </h1>
+          </div>
+          <div className="flexi">
             <h3>Affiliated by:</h3>
             <img src={records} className="img1" />
             <img src={records2} className="img2" />
-            </div>
-            <br />
-            <p>A once-in-a-fucking-lifetime experience for all aspiring billionaires to come and start a revolution. </p>
-            <br />
-            <p className='italic'>“Three days of partying, sucking, and fucking on a plot of land so far out, Nevada barely wants it.”</p>
+          </div>
+          <br />
+          <p>
+            A once-in-a-fucking-lifetime experience for all aspiring
+            billionaires to come and start a revolution.{" "}
+          </p>
+          <br />
+          <p className="italic">
+            “Three days of partying, sucking, and fucking on a plot of land so
+            far out, Nevada barely wants it.”
+          </p>
         </div>
 
-        <img src={logo} id='logo' />
-    </div>
+        <img src={logo} id="logo" />
+      </div>
 
-    <img src={line} className="line" id='about' />
+      <img src={line} className="line" id="about" />
 
-    <div className='about'>
+      <div className="about">
         <div className="dylan abt">
-            <h1><span className='gradient'>ABOUT US</span></h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui </p>
+          <h1>
+            <span className="gradient">ABOUT US</span>
+          </h1>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+            culpa qui{" "}
+          </p>
         </div>
         <div>
           <img src={about} className="line" />
         </div>
-    </div>
+      </div>
 
-    <img src={line} className="line" id='process' />
+      <img src={line} className="line" id="service" />
 
-    <div className="process">
-    <div className="ourprocess">
-            <h1><span className='gradient'>OUR PROCESS</span></h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui </p>
+      <div className="services">
+        <div className="ourprocess">
+          <h1><span className="gradient">Services we Bring</span></h1>
+
+          <p>
+          lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          </p>
+        </div>
+
+        <div className="service-container">
+          <div className="service">
+            <img src={service1} />
+          </div>
+
+          <div className="service">
+            <img src={service2} />
+          </div>
+
+          <div className="service">
+            <img src={service3} />
+          </div>
+        </div>
+      </div>
+
+      <div id="process" style={{'height': 50, 'visibility': 'hidden'}}></div>
+
+      <div className="process">
+        <div className="ourprocess">
+          <h1>
+            <span className="gradient">OUR PROCESS</span>
+          </h1>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+            culpa qui{" "}
+          </p>
         </div>
         <div className="cards">
           <div className="card">
@@ -65,56 +121,59 @@ const Homepage = () => {
             <p>Make a payment</p>
           </div>
           <div className="card">
-            <img src={[party]} alt="" />
+            <img src={party} alt="" />
             <p>Enjoy your event</p>
           </div>
         </div>
-    </div>
+      </div>
 
-    <img src={line} className="line" id='mixes' />
+      <img src={line} className="line" id="mixes" />
 
-    <div className="mixes">
-    <div className="mymixes">
-            <h1><span className='gradient'>My mixes</span></h1>
+      <div className="mixes">
+        <div className="mymixes">
+          <h1>
+            <span className="gradient">My mixes</span>
+          </h1>
         </div>
         <div className="box">
           <div className="sbox">
-            <div className='player'>
-            <div className="column">
-              <p>Demons Protected By angels </p>
-              <p>Nav, Dylan</p>
+            <div className="player">
+              <div className="column">
+                <p>Demons Protected By angels </p>
+                <p>Nav, Dylan</p>
+              </div>
+              <div className="play">
+                <AiFillPlayCircle size={40} style={{'cursor': "pointer"}} />
+              </div>
             </div>
-            <div className="play">
-              <AiFillPlayCircle size={40}/>
-            </div>   
-                     </div>
+          </div>
+          <div className="sbox">
+            <div className="player">
+              <div className="column">
+                <p>Demons Protected By angels </p>
+                <p>Nav, Dylan</p>
+              </div>
 
+              <div className="play">
+                <AiFillPlayCircle size={40} style={{'cursor': "pointer"}} />
+              </div>
+            </div>
           </div>
           <div className="sbox">
-            <div className='player'>
-            <div className="column">
-              <p>Demons Protected By angels </p>
-              <p>Nav, Dylan</p>
-            </div>
-            
-            <div className="play">
-              <AiFillPlayCircle size={40}/>
-            </div>
-          </div>
-          </div>
-          <div className="sbox">
-            <div className="column">
-              <p>Demons Protected By angels </p>
-              <p>Nav, Dylan</p>
-            </div>
-            <div className="play">
-              <AiFillPlayCircle/>
+            <div className="player">
+              <div className="column">
+                <p>Demons Protected By angels </p>
+                <p>Nav, Dylan</p>
+              </div>
+              <div className="play">
+                <AiFillPlayCircle size={40} style={{'cursor': "pointer"}} />
+              </div>
             </div>
           </div>
         </div>
-    </div>
+      </div>
     </main>
-  )
-}
+  );
+};
 
-export default Homepage
+export default Homepage;

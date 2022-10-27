@@ -4,7 +4,6 @@
     justify-content: space-between;
     align-items: center;
 }
-
 .heading{
     display: flex;
     justify-content: center;
@@ -53,7 +52,6 @@
     width: 110%;
     margin-left: -5%;
     margin-top: 5%;
-
 }
 .about{
     display: flex;
@@ -65,7 +63,6 @@
     width: 92%;
     margin-top: 50px;
 }
-
 .abt h1, .ourprocess h1, .mymixes h1{
     font-size: 3.2vw;
 }
@@ -79,7 +76,6 @@
 .ourprocess p{
     width: 73%;
 }
-
 .cards{
     display: flex;
     justify-content: space-between;
@@ -113,45 +109,20 @@
     align-items: center;
     margin-bottom: 50px;
 }
-.sbox{
-    background-image: url(../static/mix1.png);
-    width: 350px;
-    height: 340px;
-    border-radius: 20px;
-    cursor: pointer;
-}
-.play{
-    display: flex;
-    justify-content: center;
-    margin-top: auto;
-    flex-direction: column;
-    margin-left: 0;
-}
-.play{
-    margin-top: auto;
-    /* margin-left: 20px; */
-    /* background: rgba(18, 18, 18, 0.66); */
-    /* backdrop-filter: blur(3px); */
-    border-radius: 20px;
-    padding-left: 20px;
-    padding-top: 10px;
-}
-.player{
-    position: absolute;
-    bottom: 3.5%;
-    left: 6.5%;
+
+
+.service-container{
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    width: 83%;
-    height: 55px;
-    padding: 0 10px;
-    padding-right: 0;
-    border-radius: 27px;
-    background: rgba(18, 18, 18, 0.66);
-    backdrop-filter: blur(3px);
+    width: 97%;
+    margin: auto;
+    margin-top: 4%;
+    margin-bottom: 3%;
 }
-.column p{
-    font-size: 0.8rem;
-    margin-left: 5px;
+.service{
+    width: 30%;
+    position: relative;
+}
+.service img{
+    width: 97%;
 }

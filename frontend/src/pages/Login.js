@@ -23,7 +23,7 @@ const Login = () => {
         if (res.url.endsWith("login")) {
           setMsg("Invalid Credentials");
         } else {
-          window.location = "/groovy";
+          window.location = "/community";
         }
       }
     });
@@ -46,31 +46,10 @@ const Login = () => {
             <form action="" onSubmit={login}>
               {msg ? <div className="error">{msg}</div> : <></>}
 
-            {msg?
-              <div className='error'>
-                {msg}
-              </div>
-              : <></>}
-
                 <input type="username" id='username' placeholder='Enter your username' required className='input'/>
                 <input type="password" id='pass' placeholder='Password' required className='input'/>
                 <a href='#'>Forgot Password?</a><br />
                 <button className="account">Log in</button>
-              <input
-                type="username"
-                id="username"
-                placeholder="Enter your username"
-                required
-              />
-              <input
-                type="password"
-                id="pass"
-                placeholder="Password"
-                required
-              />
-              <a href="#">Forgot Password?</a>
-              <br />
-              <button className="account">Log in</button>
             </form>
           </div>
 

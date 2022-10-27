@@ -1,16 +1,19 @@
-import React from 'react'
-import Navbar from '../components/Navbar'
-import '../styles/Promotional.css'
-import records from '../static/records.jpg'
-import records2 from '../static/records2.png'
-import line from '../static/line.png'
-import about from '../static/about.png'
-import headphones from '../static/headphones.png'
-import card from '../static/card.png'
-import party from '../static/party.png'
-import mix1 from '../static/mix1.png'
-import logo from '../static/logo.png'
-import { AiFillPlayCircle } from 'react-icons/ai';
+import React from "react";
+import Card from "../components/Card";
+import Navbar from "../components/Navbar";
+import "../styles/Promotional.css";
+import records from "../static/records.jpg";
+import records2 from "../static/records2.png";
+import line from "../static/line.png";
+import about from "../static/about.png";
+import headphones from "../static/headphones.png";
+import card from "../static/card.png";
+import party from "../static/party.png";
+import logo from "../static/logo.png";
+import service1 from "../static/service1.png";
+import service2 from "../static/service2.png";
+import service3 from "../static/service3.png";
+import { AiFillPlayCircle, AiOutlineRight } from "react-icons/ai";
 
 const Homepage = () => {
   return (
@@ -70,32 +73,46 @@ const Homepage = () => {
 
       <div className="services">
         <div className="ourprocess">
-          <h1><span className="gradient">Services we Bring</span></h1>
+          <h1>
+            <span className="gradient">Services we Bring</span>
+          </h1>
 
           <p>
-          lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat.
           </p>
         </div>
 
         <div className="service-container">
           <div className="service">
             <img src={service1} />
-            <AiOutlineRight style={{'position': 'absolute', 'top': '7%', 'right': '7%'}} size={30} />
+            <AiOutlineRight
+              style={{ position: "absolute", top: "7%", right: "7%" }}
+              size={30}
+            />
           </div>
 
           <div className="service">
             <img src={service2} />
-            <AiOutlineRight style={{'position': 'absolute', 'top': '7%', 'right': '7%'}} size={30} />
+            <AiOutlineRight
+              style={{ position: "absolute", top: "7%", right: "7%" }}
+              size={30}
+            />
           </div>
 
           <div className="service">
             <img src={service3} />
-            <AiOutlineRight style={{'position': 'absolute', 'top': '7%', 'right': '7%'}} size={30} />
+            <AiOutlineRight
+              style={{ position: "absolute", top: "7%", right: "7%" }}
+              size={30}
+            />
           </div>
         </div>
       </div>
 
-      <div id="process" style={{'height': 50, 'visibility': 'hidden'}}></div>
+      <div id="process" style={{ height: 50, visibility: "hidden" }}></div>
 
       <div className="process">
         <div className="ourprocess">
@@ -137,39 +154,10 @@ const Homepage = () => {
           </h1>
         </div>
         <div className="box">
-          <div className="sbox">
-            <div className='player'>
-            <div className="column">
-              <p>Demons Protected By angels </p>
-              <p>Nav, Dylan</p>
-            </div>
-            <div className="play">
-              <AiFillPlayCircle size={40}/>
-            </div>   
-                     </div>
-
-          </div>
-          <div className="sbox">
-            <div className='player'>
-            <div className="column">
-              <p>Demons Protected By angels </p>
-              <p>Nav, Dylan</p>
-            </div>
-            
-            <div className="play">
-              <AiFillPlayCircle size={40}/>
-            </div>
-          </div>
-          </div>
-          <div className="sbox">
-            <div className="column">
-              <p>Demons Protected By angels </p>
-              <p>Nav, Dylan</p>
-            </div>
-            <div className="play">
-              <AiFillPlayCircle/>
-            </div>
-          </div>
+          <Card />
+          <Card />
+          <Card />
+          <Card />
         </div>
       </div>
     </main>

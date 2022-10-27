@@ -49,10 +49,10 @@ const Register = () => {
           <form action="" onSubmit={register}>
             {msg ? <div className="error">{msg}</div> : <></>}
 
-                <input type="text" id='username' placeholder='Username' required/>
-                <input type="text" id='name' placeholder='Name' required/>
-                <input type="email" id='email' placeholder='Enter your email address' required/>
-                <input type="password" id='pass' placeholder='Password' required/>
+                <input type="text" className="input" id='username' placeholder='Username' required/>
+                <input type="text" className="input" id='name' placeholder='Name' required/>
+                <input type="email" className="input" id='email' placeholder='Enter your email address' required/>
+                <input type="password" className="input" id='pass' placeholder='Password' required/>
                 <button className="account">Create Account</button>
             </form>
           </div>          

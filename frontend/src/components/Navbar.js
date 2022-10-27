@@ -11,7 +11,7 @@ const Navbar = () => {
         </div>
         <ul>
           <li><a href='#about'>About us</a></li>
-          <li><a href='#'>Our Services</a></li>
+          <li><a href='#service'>Our Services</a></li>
           <li><a href='#process'>Our Process</a></li>
           <li><a href='#mixes'>My Mixes</a></li>
           <Link to='/login'><button>Community</button></Link>

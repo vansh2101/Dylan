@@ -73,6 +73,7 @@
     margin-top: 3%;
     font-size: 1.1vw;
     width: 92%;
+    margin-left: -2px
 }
 
 .ourprocess p{
@@ -86,8 +87,8 @@
     margin-top: 6%;
 }
 .card{
-    width: 320px;
-    height: 110px;
+    width: 23%;
+    height: 12vh;
 }
 .card img{
     width: 40px;
@@ -101,7 +102,7 @@
     border-radius: 20px;
 }
 .card p{
-    font-size: 1.3rem;
+    font-size: 1.2vw;
     padding-left: 25px;
     font-weight: 500;
     font-family: poppins;
@@ -116,24 +117,10 @@
     background-image: url(../static/mix1.png);
     width: 350px;
     height: 340px;
-    border-radius: 30px;
+    border-radius: 20px;
     cursor: pointer;
 }
-.sbox2{
-    background-image: url(../static/mix2.png);
-    width: 350px;
-    height: 340px;
-    border-radius: 30px;
-    cursor: pointer;
-}
-.sbox3{
-    background-image: url(../static/mix3.png);
-    width: 350px;
-    height: 340px;
-    border-radius: 30px;
-    cursor: pointer;
-}
-.column{
+.play{
     display: flex;
     justify-content: center;
     margin-top: auto;
@@ -148,26 +135,23 @@
     border-radius: 20px;
     padding-left: 20px;
     padding-top: 10px;
-    padding-right: 10px;
 }
 .player{
+    position: absolute;
+    bottom: 3.5%;
+    left: 6.5%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 85%;
-    /* background-color: black; */
+    width: 83%;
     height: 55px;
-    margin: auto;
-    margin-top: 77%;
-    padding-bottom: 5px;
-    border-radius: 20px;
+    padding: 0 10px;
+    padding-right: 0;
+    border-radius: 27px;
     background: rgba(18, 18, 18, 0.66);
     backdrop-filter: blur(3px);
 }
 .column p{
     font-size: 0.8rem;
     margin-left: 5px;
-}
-.color{
-    color: #848484;
 }

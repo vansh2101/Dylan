@@ -15,7 +15,7 @@ const Community = () => {
             Create tracks with <span className="gradient">Groovy</span>
           </h1>
           <p className="color">
-            Discover the best beats,create them, upload them!
+            Discover the best beats, create them, upload them!
           </p>
           <Link to="/groovy">
             <button>Launch Groovy</button>

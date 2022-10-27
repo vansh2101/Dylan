@@ -101,3 +101,14 @@ p{
     color: rgb(223, 137, 137);
     margin-bottom: 2%;
 }
+
+
+.desc{
+    width: 45%;
+    margin-left: 12%;
+    text-align: center;
+    font-size: 1.6vw;
+}
+.desc h1{
+    font-weight: 500;
+}

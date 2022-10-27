@@ -73,6 +73,7 @@
     margin-top: 3%;
     font-size: 1.1vw;
     width: 92%;
+    margin-left: -2px
 }
 
 .ourprocess p{
@@ -101,7 +102,7 @@
     border-radius: 20px;
 }
 .card p{
-    font-size: 1.3rem;
+    font-size: 1.2vw;
     padding-left: 25px;
     font-weight: 500;
     font-family: poppins;
@@ -121,7 +122,12 @@
 }
 .play{
     display: flex;
+    justify-content: center;
     align-items: center;
+    background: rgb(18, 18, 18, 0.6);
+    height: 100%;
+    width: 26%;
+    border-radius: 27px;
 }
 .player{
     position: absolute;
@@ -130,10 +136,11 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 82%;
+    width: 83%;
     height: 55px;
     padding: 0 10px;
-    border-radius: 20px;
+    padding-right: 0;
+    border-radius: 27px;
     background: rgba(18, 18, 18, 0.66);
     backdrop-filter: blur(3px);
 }
@@ -152,6 +159,7 @@
 }
 .service{
     width: 30%;
+    position: relative;
 }
 .service img{
     width: 97%;

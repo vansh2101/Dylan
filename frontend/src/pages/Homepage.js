@@ -12,7 +12,7 @@ import service1 from "../static/service1.png";
 import service2 from "../static/service2.png";
 import service3 from "../static/service3.png";
 import logo from "../static/logo.png";
-import { AiFillPlayCircle } from "react-icons/ai";
+import { AiFillPlayCircle, AiOutlineRight } from "react-icons/ai";
 
 const Homepage = () => {
   return (
@@ -82,14 +82,17 @@ const Homepage = () => {
         <div className="service-container">
           <div className="service">
             <img src={service1} />
+            <AiOutlineRight style={{'position': 'absolute', 'top': '7%', 'right': '7%'}} size={30} />
           </div>
 
           <div className="service">
             <img src={service2} />
+            <AiOutlineRight style={{'position': 'absolute', 'top': '7%', 'right': '7%'}} size={30} />
           </div>
 
           <div className="service">
             <img src={service3} />
+            <AiOutlineRight style={{'position': 'absolute', 'top': '7%', 'right': '7%'}} size={30} />
           </div>
         </div>
       </div>
@@ -143,7 +146,7 @@ const Homepage = () => {
                 <p>Nav, Dylan</p>
               </div>
               <div className="play">
-                <AiFillPlayCircle size={40} style={{'cursor': "pointer"}} />
+              <AiFillPlayCircle size={35} style={{'cursor': "pointer"}} color='#C5C5C5' />
               </div>
             </div>
           </div>
@@ -155,7 +158,7 @@ const Homepage = () => {
               </div>
 
               <div className="play">
-                <AiFillPlayCircle size={40} style={{'cursor': "pointer"}} />
+                <AiFillPlayCircle size={35} style={{'cursor': "pointer"}} color='#C5C5C5' />
               </div>
             </div>
           </div>
@@ -166,7 +169,7 @@ const Homepage = () => {
                 <p>Nav, Dylan</p>
               </div>
               <div className="play">
-                <AiFillPlayCircle size={40} style={{'cursor': "pointer"}} />
+              <AiFillPlayCircle size={35} style={{'cursor': "pointer"}} color='#C5C5C5' />
               </div>
             </div>
           </div>

@@ -111,3 +111,51 @@ button{
     font-size: 0.8rem;
     margin-left: 5px;
 }
+
+
+
+.menu{
+    width: 12%;
+    padding: 20px;
+    padding-left: 43px;
+}
+
+.menu img{
+    width: 60%;
+}
+
+.menu ul{
+    display: block;
+    padding: 0;
+    text-align: left;
+    width: 100%;
+    margin-top: 20%;
+}
+.menu h3{
+    font-weight: 500;
+    font-size: 1.2vw;
+}
+.menu a{
+    color: white;
+    text-decoration: none;
+    transition: 0.2s;
+    opacity: 0.6;
+}
+.menu a:hover{
+    opacity: 1;
+}
+.menu li{
+    display: flex;
+    align-items: center;
+    margin-bottom: 15%;
+    font-size: 1.05vw;
+    margin-left: 2%;
+}
+.menu span{
+    margin-left: 14%;
+}
+.menu hr{
+    margin-bottom: 12%;
+    width: 80%;
+    margin-left: 0;
+}

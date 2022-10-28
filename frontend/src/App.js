@@ -4,6 +4,7 @@ import Login from './pages/Login';
 import Homepage from './pages/Homepage';
 import Groovy from "./pages/Groovy";
 import Community from "./pages/Community";
+import Profile from "./pages/Profile";
 function App() {
   return (
     <>
@@ -14,6 +15,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/groovy" element={<Groovy />} />
           <Route path="/community" element={<Community />} />
+          <Route path="/profile" element={<Profile />} />
         </Routes>
     </BrowserRouter>
     </>

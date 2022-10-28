@@ -1,0 +1,84 @@
+.profile {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 30px;
+    margin-left: 0;
+    max-width: 50%;
+}
+
+.picture img {
+    width: 85%;
+}
+
+.information {
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    flex-direction: column;
+
+}
+
+.follow {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.button {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.button button {
+    background-color: #121212;
+    color: white;
+    width: 120px;
+    height: 40px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.button h1{
+    margin-right: 50px;
+}
+.follow p {
+    margin-right: 40px;
+}
+
+.sboxnew{
+    background-image: url(../static/mix1.png);
+    background-size: cover;
+    width: 15vw;
+    height: 280px;
+    border-radius: 20px;
+    position: relative;
+}
+.add{
+    width: 15vw;
+    height: 280px;
+    border-radius: 20px;
+    backdrop-filter: blur(14px);
+    background: rgba(255, 255, 255, 0.09);
+    border: 4px dashed #A3A3A3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.flexbox{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* max-width: 90%; */
+}
+.recently{
+    max-width: 90%;
+    margin: auto;
+}
+.recently h2{
+    margin-top: 60px;
+}

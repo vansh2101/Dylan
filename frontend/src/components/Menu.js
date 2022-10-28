@@ -6,12 +6,19 @@ import {
     AiFillSetting,
     AiOutlineUser,
   } from "react-icons/ai";
-  import { BsDisc } from "react-icons/bs";
+import { BsDisc } from "react-icons/bs";
+import {FiLogOut} from 'react-icons/fi'
 import logo from "../static/logo.png";
 import { Link } from "react-router-dom";
 
 
 function Menu({highlight}) {
+
+  const logout = () => {
+    localStorage.removeItem('user')
+    window.location = '/'
+  }
+
   return (
     <div className="menu">
           <Link to="/">
@@ -21,7 +28,7 @@ function Menu({highlight}) {
           <ul>
             <h3>Menu</h3>
 
-            <Link to="/">
+            <Link to="/community">
               <li>
                 <AiOutlineHome size={20} />
                 <span>Home</span>
@@ -49,12 +56,12 @@ function Menu({highlight}) {
               </li>
             </Link>
 
-            <Link to="/community">
+            {/* <Link to="/community">
               <li>
                 <AiFillCompass size={20} />
                 <span>Explore</span>
               </li>
-            </Link>
+            </Link> */}
 
             <hr />
 
@@ -68,6 +75,13 @@ function Menu({highlight}) {
               <li>
                 <AiOutlineUser size={20} />
                 <span>Profile</span>
+              </li>
+            </Link>
+
+            <Link to="" style={{color: '#CB303B', opacity: 1, position: 'absolute', bottom: 10, left: 47}} onClick={logout}>
+              <li>
+                <FiLogOut size={32} />
+                <span>Logout</span>
               </li>
             </Link>
           </ul>

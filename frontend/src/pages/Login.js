@@ -4,6 +4,10 @@ import "../styles/Account.css";
 import logo from "../static/logo.png";
 
 const Login = () => {
+
+  if (localStorage.getItem('user')){
+    window.location ='/community'
+  }
   const [msg, setMsg] = useState();
 
   const login = (e) => {
@@ -23,6 +27,7 @@ const Login = () => {
         if (res.url.endsWith("login")) {
           setMsg("Invalid Credentials");
         } else {
+          localStorage.setItem('user', data.username)
           window.location = "/community";
         }
       }

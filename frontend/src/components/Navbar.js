@@ -24,9 +24,11 @@ const Navbar = ({loggedIn=false}) => {
             <AiOutlineSearch size={25} color='#848484' id='search'/>
             <input type='text' placeholder='Search...' className='search' />
           </div>
-          <div className='pfp'>
-            <img src={pfp} />
-          </div>
+          <Link to='/profile'>
+            <div className='pfp'>
+              <img src={pfp} />
+            </div>
+          </Link>
           </>
           }
         </ul>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import Card from "../components/Card";
 import Navbar from "../components/Navbar";
 import "../styles/Promotional.css";
@@ -16,6 +16,20 @@ import service3 from "../static/service3.png";
 import { AiFillPlayCircle, AiOutlineRight } from "react-icons/ai";
 
 const Homepage = () => {
+
+  const [start, setStart] = useState([-1, false])
+
+  const play = (id) => {
+    if(!start[1]){
+      document.getElementById(id).play()
+      setStart([id,true])
+    }
+    else{
+      document.getElementById(id).pause()
+      setStart([-1, false])
+    }
+  }
+
   return (
     <main>
       <Navbar />
@@ -154,10 +168,22 @@ const Homepage = () => {
           </h1>
         </div>
         <div className="box">
-          <Card />
-          <Card />
-          <Card />
-          <Card />
+          <Card text={'Never Sleep'} user={'Nav, Dylan'} onClick={() => play('beat1')} pause={start[0] == 'beat1' ? true: false}/>
+          <Card text={'Seedhe Maut'} user={'Nav, Dylan'} onClick={() => play('beat2')} pause={start[0] == 'beat2' ? true: false}/>
+          <Card text={'Shorty'} user={'Nav, Dylan'} onClick={() => play('beat3')} pause={start[0] == 'beat3' ? true: false}/>
+        </div>
+        <div className="hidden">
+        <audio id="beat1" controls loop>
+          <source src={"audio/neversleep.mp3"} type="audio/mp3" />
+        </audio>
+
+        <audio id="beat2" controls loop>
+          <source src={"audio/seedhemaut.mp3"} type="audio/mp3" />
+        </audio>
+
+        <audio id="beat3" controls loop>
+          <source src={"audio/shorty.mp3"} type="audio/mp3" />
+        </audio>
         </div>
       </div>
     </main>

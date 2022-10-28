@@ -12,9 +12,6 @@
     border-top-left-radius: 45px;
     border-bottom-left-radius: 45px;
     background-color: #21232A;
-    /* display: flex;
-    flex-direction: column;
-    align-items: center; */
 }
 .center{
     display: flex;
@@ -41,7 +38,7 @@
 .banner .flex{
     margin-left: -2%;
 }
-.banner button{
+.banner button, .save{
     background: none;
     background-color: #212428;
     border-radius: 10px;
@@ -59,7 +56,7 @@
 }
 .groovy h1{
     margin: 0;
-    font-size: 2.3vw;
+    font-size: 2.1vw;
     font-weight: 500;
 }
 

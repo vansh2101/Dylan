@@ -25,12 +25,24 @@ router.get('/get', (req, res) => {
     }).sort({time: -1});
 })
 
+router.post('/fetch', (req, res) => {
+    Post.find({user: req.body.id}, (err, posts) => {
+        if (!err){
+            res.json(posts);
+        }
+        else {
+            res.json({'error': err.message});
+        }
+    }).sort({time: -1});
+})
+
 
 router.post('/post', (req, res) => {
     const posts = new Post({
         _id: new mongoose.Types.ObjectId,
-        user: req.user.id,
-        audio: req.body.audio
+        user: req.body.id,
+        audio: req.body.audio,
+        title: req.body.title,
     })
 
     posts.save()

@@ -14,8 +14,8 @@ router.get('/', (req, res) => {
 })
 
 
-router.get('/get', (req, res) => {
-    Audio.find({user: req.user.id}, (err, audio) => {
+router.post('/get', (req, res) => {
+    Audio.find({user: req.body.id}, (err, audio) => {
         if (!err){
             res.json(audio);
         }
@@ -29,7 +29,7 @@ router.get('/get', (req, res) => {
 router.post('/post', (req, res) => {
     const audio = new Audio({
         _id: new mongoose.Types.ObjectId,
-        user: req.user.id,
+        user: req.body.id,
         title: req.body.title,
         audio: req.body.audio
     })

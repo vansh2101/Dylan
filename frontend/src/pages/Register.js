@@ -4,6 +4,10 @@ import "../styles/Account.css";
 import logo from "../static/logo.png";
 
 const Register = () => {
+  if (localStorage.getItem('user')){
+    window.location ='/community'
+  }
+  
   const [msg, setMsg] = useState();
 
   const register = (e) => {

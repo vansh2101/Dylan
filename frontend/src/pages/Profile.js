@@ -1,91 +1,300 @@
-import React from 'react';
+import React, {useEffect, useState} from "react";
 import Menu from "../components/Menu";
-import '../styles/Profile.css';
-import profile from '../static/profile.png'
-import { MdModeEdit } from 'react-icons/md';
-import { AiFillPlayCircle } from "react-icons/ai";
+import Card from "../components/Card";
+import "../styles/Profile.css";
+import profile from "../static/profile.png";
+import { MdModeEdit } from "react-icons/md";
 import { BsPlusCircle } from "react-icons/bs";
+
 function Profile() {
+
+  const [user, setUser] = useState({'name': '', 'username': ''})
+  const [saved, setSaved] = useState([])
+  const [posts, setPosts] = useState([])
+  const [pause, setPause] = useState([-1, false, 'saved'])
+  const [inte, setInte] = useState()
+  const [playing, setPlaying] = useState([])
+  const [postkey, setPostKey] = useState()
+  const [type, setType] = useState('saved')
+
+  let ms = 0;
+  let s = 0;
+  let time = []
+  let key = 0
+  let ids = []
+  let int;
+
+  const timer = () => {
+    ms++;
+    
+    if (ms == 100) {
+      ms = 0;
+      s = s + 1;
+      console.log(s)
+
+      if (time.includes(String(s))){
+        const audio = type == 'saved' ? saved[key].audio[String(s)] : posts[key].audio[String(s)]
+        console.log(audio)
+
+        if (audio['track'] == 'stop'){
+          clearInterval(inte)
+          for (let i = 0; i < ids.length; i++){
+            document.getElementById(ids[i]).pause()
+            document.getElementById(ids[i]).load()
+          }
+          setPause([-1, false, 'saved'])
+        }
+        else{
+          if(audio['status']){
+            document.getElementById(audio['track']).play()
+            ids.push(audio['track'])
+          }
+          else{
+            document.getElementById(audio['track']).pause()
+            document.getElementById(audio['track']).load()
+            const index = ids.indexOf(audio['track'])
+            ids.splice(index, 1)
+          }
+          setPlaying(ids)
+        }
+      }
+    }
+  };
+
+  const play = (id, post=false) => {
+    if(!pause[1]){
+      key = id
+      const audio = post? posts[id].audio : saved[id].audio
+      time = Object.keys(audio)
+      int = setInterval(timer, 10)
+      if(post){
+        setType('post')
+        setPause([id, true, 'post'])
+      }
+      else{
+        setType('saved')
+        setPause([id, true, 'saved'])
+      }
+      setInte(int)
+    }
+    else{
+      stop_music()
+    }
+  }
+
+  const stop_music = () => {
+    clearInterval(inte)
+    for (let i = 0; i < playing.length; i++){
+      document.getElementById(playing[i]).pause()
+      document.getElementById(playing[i]).load()
+    }
+    ms = 0
+    s = 0
+    setPlaying([])
+    setPause([-1, false, 'saved'])
+  }
+
+  const openmodal = (key) => {
+    document.getElementById('modal').style.display = 'block'
+    setPostKey(key)
+  }
+
+  const post = () => {
+    const audio = saved[postkey]
+
+    const data = {
+      'id': localStorage.getItem('user'),
+      'title': audio.title,
+      'audio': audio.audio
+    }
+
+    fetch('http://localhost:8000/posts/post/', {
+      method: 'POST',
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify(data),
+    })
+    .then((res) => res.json())
+    .then((data) => {
+      console.log(data)
+    })
+    
+    fetch_posts()
+    cancel()
+
+  }
+
+  const cancel = () => {
+    document.getElementById('modal').style.display = 'none'
+  }
+
+  const fetch_posts = () => {
+    fetch('http://localhost:8000/posts/fetch/', {
+      method: 'POST',
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify({'id': localStorage.getItem('user')}),
+    })
+    .then((res) => res.json())
+    .then((data) => {
+      setPosts(data)
+    })
+  }
+
+  useEffect(() => {
+    
+    fetch_posts()
+
+    fetch('http://localhost:8000/users/get/', {
+      method: 'POST',
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify({'id': localStorage.getItem('user')}),
+    })
+    .then((res) => res.json())
+    .then((data) => {
+      setUser(data)
+    })
+
+    fetch('http://localhost:8000/groovy/get/', {
+      method: 'POST',
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify({'id': localStorage.getItem('user')}),
+    })
+    .then((res) => res.json())
+    .then((data) => {
+      setSaved(data)
+    })
+  }, [])
+
   return (
     <>
-        <div className='split'>
-            <Menu highlight={'profile'} />
+      <div className="split">
+        <Menu highlight={"profile"} />
 
-            <div className='container'>
+        <div className="container">
+          <div className="scrollview">
             <div className="profile">
-          <div className="picture">
-            <img src={profile} alt="" />
+              <div className="picture">
+                <img src={profile} alt="" />
+              </div>
+              <div className="information">
+                <div className="button">
+                  <h1>{user.name}</h1>
+                  <button className="edit">
+                    <MdModeEdit size={15} /> Edit Profile
+                  </button>
+                </div>
+                <p className="username">@{user.username}</p>
+                <div className="follow">
+                  <p className="color">02 audios</p>
+                  <p className="color">69 followers</p>
+                  <p className="color">20 following</p>
+                </div>
+              </div>
+            </div>
+            <div className="recently">
+              <h2>Your Posts</h2>
+              <div className="recent">
+                {posts.map((track,key) => 
+                <Card key={key} text={track.title} user={track.user} onClick={() => play(key, true)} pause={pause[2] == 'post' ? pause[0] == key? pause[1]: false: false} />
+                )}
+              </div>
+            </div>
+
+            <div className="recently">
+              <h2>Saved Tracks</h2>
+              <div className="recent">
+              {saved.map((track, key) => 
+                <Card key={key} text={track.title} audio={true} modalOnClick={() => openmodal(key)} user={track.user} onClick={() => play(key)} pause={pause[2] == 'saved' ? pause[0] == key? pause[1]: false: false} />
+                )}
+                <Card id='add' />
+              </div>
+            </div>
           </div>
-          <div className="information">
-            <div className="button">
-            <h1>NsheChadha</h1>
-            <button className='edit'><MdModeEdit size={15}/> Edit Profile</button>
-            </div>
-            <div className="follow">
-              <p className='color'>02 audios</p>
-              <p className='color'>69 followers</p>
-              <p className='color'>20 following</p>
+        </div>
+      </div>
+
+      <div className="modal" id="modal">
+        <div className="modal-content">
+          <div className="header">
+            <span>Post This Track?</span>
+          </div>
+
+          <div className="content">
+            <p>Are you sure you want to post this track and show your skills to the world?</p>
+            <div className="flex">
+                <button className="save" onClick={cancel}>Cancel</button>
+                <button className="save" onClick={post}>Post</button>
             </div>
           </div>
         </div>
-        <div className="recently">
-          <h2>Recently added</h2>
-          <div className="flexbox">
-          <div className="sboxnew">
-      <div className="player">
-        <div className="column">
-          <p>Demons Protected By angels </p>
-          <p>Nav, Dylan</p>
-        </div>
-        <div className="play">
-          <AiFillPlayCircle
-            size={35}
-            style={{ cursor: "pointer" }}
-            color="#C5C5C5"
-          />
-        </div>
       </div>
-    </div>
-    <div className="sboxnew">
-      <div className="player">
-        <div className="column">
-          <p>Demons Protected By angels </p>
-          <p>Nav, Dylan</p>
-        </div>
-        <div className="play">
-          <AiFillPlayCircle
-            size={35}
-            style={{ cursor: "pointer" }}
-            color="#C5C5C5"
-          />
-        </div>
+
+      <div className="hidden">
+        <audio id="beat1" controls loop>
+          <source src={"audio/beat1.wav"} type="audio/wav" />
+        </audio>
+
+        <audio id="beat2" controls loop>
+          <source src={"audio/beat2.wav"} type="audio/wav" />
+        </audio>
+
+        <audio id="beat3" controls loop>
+          <source src={"audio/beat3.wav"} type="audio/wav" />
+        </audio>
+
+        <audio id="beat4" controls loop>
+          <source src={"audio/beat4.wav"} type="audio/wav" />
+        </audio>
+
+        <audio id="piano" controls loop>
+          <source src={"audio/piano.wav"} type="audio/wav" />
+        </audio>
+
+        <audio id="strings" controls loop>
+          <source src={"audio/strings.wav"} type="audio/wav" />
+        </audio>
+
+        <audio id="mbira" controls loop>
+          <source src={"audio/mbira.wav"} type="audio/wav" />
+        </audio>
+
+        <audio id="pad" controls loop>
+          <source src={"audio/pad.wav"} type="audio/wav" />
+        </audio>
+
+        <audio id="keys" controls loop>
+          <source src={"audio/keys.wav"} type="audio/wav" />
+        </audio>
+
+        <audio id="synth" controls loop>
+          <source src={"audio/synth.wav"} type="audio/wav" />
+        </audio>
+
+        <audio id="flute" controls loop>
+          <source src={"audio/flute.wav"} type="audio/wav" />
+        </audio>
+
+        <audio id="synth1" controls loop>
+          <source src={"audio/synth1.wav"} type="audio/wav" />
+        </audio>
+
+        <audio id="strings1" controls loop>
+          <source src={"audio/strings1.wav"} type="audio/wav" />
+        </audio>
+
+        <audio id="bass" controls loop>
+          <source src={"audio/bass.wav"} type="audio/wav" />
+        </audio>
+
+        <audio id="brass" controls loop>
+          <source src={"audio/brass.wav"} type="audio/wav" />
+        </audio>
+
+        <audio id="bass1" controls loop>
+          <source src={"audio/bass1.wav"} type="audio/wav" />
+        </audio>
       </div>
-    </div>
-    <div className="sboxnew">
-      <div className="player">
-        <div className="column">
-          <p>Demons Protected By angels </p>
-          <p>Nav, Dylan</p>
-        </div>
-        <div className="play">
-          <AiFillPlayCircle
-            size={35}
-            style={{ cursor: "pointer" }}
-            color="#C5C5C5"
-          />
-        </div>
-      </div>
-    </div>
-    <div className="add">
-      <BsPlusCircle size={50} color="#9E9E9E"/>
-    </div>
-      </div>
-        </div>
-            </div>
-        </div>
-       
     </>
-  )
+  );
 }
 
-export default Profile
+export default Profile;

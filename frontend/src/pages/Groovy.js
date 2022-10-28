@@ -2,13 +2,15 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "../styles/Groovy.css";
 import Menu from "../components/Menu";
-import {FaRecordVinyl, FaVolumeDown} from 'react-icons/fa'
+import {FaRecordVinyl, FaVolumeDown, FaStop} from 'react-icons/fa'
 import { BsStopwatchFill } from "react-icons/bs";
 import {RiSoundModuleFill} from "react-icons/ri";
 
 function Groovy() {
   const [started, setStarted] = useState(false);
+  const [inter, setInter] = useState()
   const [sec, setSec] = useState(0);
+  const [min, setMin] = useState(0);
   const [audio, setAudio] = useState({});
   let ms = 0;
   let s = 0;
@@ -44,21 +46,22 @@ function Groovy() {
 
   const timer = () => {
     ms++;
-
+    
+    let m = min
     if (ms == 100) {
       ms = 0;
       s = s + 1;
+
+      if (s%60 == 0){
+        m = m + 1
+        setMin(m)
+      }
       setSec(s);
     }
   };
 
   const play = (id, col) => {
     console.log(id);
-
-    if (!started) {
-      setInterval(timer, 10);
-      setStarted(true);
-    }
 
     let st = status;
     let aud = audio;
@@ -69,28 +72,71 @@ function Groovy() {
         st[grp[col]] = false;
         document.getElementById(grp[col]).pause();
         document.getElementById(grp[col]).load();
+        document.getElementById(grp[col]+'-icon').classList.remove('hidden')
+        document.getElementById(grp[col]+'-metronome').classList.add('hidden')
+        const list = document.getElementsByClassName(grp[col]+'-circle')
+        for(let i=0; i< list.length; i++){
+          list[i].classList.remove('animation')
+        }
         document.getElementById(grp[col] + "-tile").style.opacity = 0.5;
       }
       st[id] = true;
       grp[col] = id;
       document.getElementById(id).play();
+      document.getElementById(id+'-icon').classList.add('hidden')
+      document.getElementById(id+'-metronome').classList.remove('hidden')
+      const list = document.getElementsByClassName(id+'-circle')
+      for(let i=0; i< list.length; i++){
+        list[i].classList.add('animation')
+      }
       document.getElementById(id + "-tile").style.opacity = 1;
       aud[sec] = { track: id, status: true };
-    } else {
+    } 
+    else {
       st[id] = false;
       grp[col] = null;
       document.getElementById(id).pause();
       document.getElementById(id).load();
+      document.getElementById(id+'-icon').classList.remove('hidden')
+      document.getElementById(id+'-metronome').classList.add('hidden')
+      const list = document.getElementsByClassName(id+'-circle')
+      for(let i=0; i< list.length; i++){
+        list[i].classList.remove('animation')
+      }
       document.getElementById(id + "-tile").style.opacity = 0.5;
       aud[sec] = { track: id, status: false };
     }
 
-    setGroups(grp);
-    setStatus(st);
-    setAudio(aud);
+    if(started){
+      setGroups(grp);
+      setStatus(st);
+      setAudio(aud);
+    }
 
     console.log(audio);
   };
+
+  const record = () => {
+    console.log('started')
+    setStarted(true);
+    setAudio({})
+    const interval = setInterval(timer, 10);
+    setInter(interval)
+    document.getElementById('record').classList.add('hidden');
+    document.getElementById('stop').classList.remove('hidden');
+  }
+
+  const stop = () => {
+    console.log('stopped')
+    setStarted(false);
+    clearInterval(inter)
+    s = 0;
+    ms = 0;
+    setSec(0)
+    setMin(0)
+    document.getElementById('record').classList.remove('hidden');
+    document.getElementById('stop').classList.add('hidden');
+  }
 
   return (
     <>
@@ -123,10 +169,10 @@ function Groovy() {
                 >
                   <RiSoundModuleFill size={27} id='beat1-icon'/>
                   <div className="metronome hidden" id="beat1-metronome">
-                    <div className="circle" />
-                    <div className="circle" />
-                    <div className="circle" />
-                    <div className="circle" />
+                    <div className="circle beat1-circle" />
+                    <div className="circle beat1-circle" />
+                    <div className="circle beat1-circle" />
+                    <div className="circle beat1-circle" />
                   </div>
                   beat
                 </div>
@@ -137,10 +183,10 @@ function Groovy() {
                 >
                   <RiSoundModuleFill size={27} id='beat2-icon'/>
                   <div className="metronome hidden" id="beat2-metronome">
-                    <div className="circle" />
-                    <div className="circle" />
-                    <div className="circle" />
-                    <div className="circle" />
+                    <div className="circle beat2-circle" />
+                    <div className="circle beat2-circle" />
+                    <div className="circle beat2-circle" />
+                    <div className="circle beat2-circle" />
                   </div>
                   beat
                 </div>
@@ -151,10 +197,10 @@ function Groovy() {
                 >
                   <RiSoundModuleFill size={27} id='beat3-icon'/>
                   <div className="metronome hidden" id="beat3-metronome">
-                    <div className="circle" />
-                    <div className="circle" />
-                    <div className="circle" />
-                    <div className="circle" />
+                    <div className="circle beat3-circle" />
+                    <div className="circle beat3-circle" />
+                    <div className="circle beat3-circle" />
+                    <div className="circle beat3-circle" />
                   </div>
                   beat
                 </div>
@@ -165,10 +211,10 @@ function Groovy() {
                 >
                   <RiSoundModuleFill size={27} id='beat4-icon'/>
                   <div className="metronome hidden" id="beat4-metronome">
-                    <div className="circle" />
-                    <div className="circle" />
-                    <div className="circle" />
-                    <div className="circle" />
+                    <div className="circle beat4-circle" />
+                    <div className="circle beat4-circle" />
+                    <div className="circle beat4-circle" />
+                    <div className="circle beat4-circle" />
                   </div>
                   beat
                 </div>
@@ -182,10 +228,10 @@ function Groovy() {
                 >
                   <RiSoundModuleFill size={27} id='piano-icon'/>
                   <div className="metronome hidden" id="piano-metronome">
-                    <div className="circle" />
-                    <div className="circle" />
-                    <div className="circle" />
-                    <div className="circle" />
+                    <div className="circle piano-circle" />
+                    <div className="circle piano-circle" />
+                    <div className="circle piano-circle" />
+                    <div className="circle piano-circle" />
                   </div>
                   piano
                 </div>
@@ -196,10 +242,10 @@ function Groovy() {
                 >
                   <RiSoundModuleFill size={27} id='strings-icon'/>
                   <div className="metronome hidden" id="strings-metronome">
-                    <div className="circle" />
-                    <div className="circle" />
-                    <div className="circle" />
-                    <div className="circle" />
+                    <div className="circle strings-circle" />
+                    <div className="circle strings-circle" />
+                    <div className="circle strings-circle" />
+                    <div className="circle strings-circle" />
                   </div>
                   strings
                 </div>
@@ -210,10 +256,10 @@ function Groovy() {
                 >
                   <RiSoundModuleFill size={27} id='mbira-icon'/>
                   <div className="metronome hidden" id="mbira-metronome">
-                    <div className="circle" />
-                    <div className="circle" />
-                    <div className="circle" />
-                    <div className="circle" />
+                    <div className="circle mbira-circle" />
+                    <div className="circle mbira-circle" />
+                    <div className="circle mbira-circle" />
+                    <div className="circle mbira-circle" />
                   </div>
                   mbira
                 </div>
@@ -224,10 +270,10 @@ function Groovy() {
                 >
                   <RiSoundModuleFill size={27} id='pad-icon'/>
                   <div className="metronome hidden" id="pad-metronome">
-                    <div className="circle" />
-                    <div className="circle" />
-                    <div className="circle" />
-                    <div className="circle" />
+                    <div className="circle pad-circle" />
+                    <div className="circle pad-circle" />
+                    <div className="circle pad-circle" />
+                    <div className="circle pad-circle" />
                   </div>
                   pad
                 </div>
@@ -241,10 +287,10 @@ function Groovy() {
                 >
                   <RiSoundModuleFill size={27} id='keys-icon'/>
                   <div className="metronome hidden" id="keys-metronome">
-                    <div className="circle" />
-                    <div className="circle" />
-                    <div className="circle" />
-                    <div className="circle" />
+                    <div className="circle keys-circle" />
+                    <div className="circle keys-circle" />
+                    <div className="circle keys-circle" />
+                    <div className="circle keys-circle" />
                   </div>
                   keys
                 </div>
@@ -255,10 +301,10 @@ function Groovy() {
                 >
                   <RiSoundModuleFill size={27} id='synth-icon'/>
                   <div className="metronome hidden" id="synth-metronome">
-                    <div className="circle" />
-                    <div className="circle" />
-                    <div className="circle" />
-                    <div className="circle" />
+                    <div className="circle synth-circle" />
+                    <div className="circle synth-circle" />
+                    <div className="circle synth-circle" />
+                    <div className="circle synth-circle" />
                   </div>
                   synth
                 </div>
@@ -269,10 +315,10 @@ function Groovy() {
                 >
                   <RiSoundModuleFill size={27} id='flute-icon'/>
                   <div className="metronome hidden" id="flute-metronome">
-                    <div className="circle" />
-                    <div className="circle" />
-                    <div className="circle" />
-                    <div className="circle" />
+                    <div className="circle flute-circle" />
+                    <div className="circle flute-circle" />
+                    <div className="circle flute-circle" />
+                    <div className="circle flute-circle" />
                   </div>
                   flute
                 </div>
@@ -283,10 +329,10 @@ function Groovy() {
                 >
                   <RiSoundModuleFill size={27} id='synth1-icon'/>
                   <div className="metronome hidden" id="synth1-metronome">
-                    <div className="circle" />
-                    <div className="circle" />
-                    <div className="circle" />
-                    <div className="circle" />
+                    <div className="circle synth1-circle" />
+                    <div className="circle synth1-circle" />
+                    <div className="circle synth1-circle" />
+                    <div className="circle synth1-circle" />
                   </div>
                   synth
                 </div>
@@ -300,10 +346,10 @@ function Groovy() {
                 >
                   <RiSoundModuleFill size={27} id='strings1-icon'/>
                   <div className="metronome hidden" id="strings1-metronome">
-                    <div className="circle" />
-                    <div className="circle" />
-                    <div className="circle" />
-                    <div className="circle" />
+                    <div className="circle strings1-circle" />
+                    <div className="circle strings1-circle" />
+                    <div className="circle strings1-circle" />
+                    <div className="circle strings1-circle" />
                   </div>
                   strings
                 </div>
@@ -314,10 +360,10 @@ function Groovy() {
                 >
                   <RiSoundModuleFill size={27} id='bass-icon'/>
                   <div className="metronome hidden" id="bass-metronome">
-                    <div className="circle" />
-                    <div className="circle" />
-                    <div className="circle" />
-                    <div className="circle" />
+                    <div className="circle bass-circle" />
+                    <div className="circle bass-circle" />
+                    <div className="circle bass-circle" />
+                    <div className="circle bass-circle" />
                   </div>
                   bass
                 </div>
@@ -328,10 +374,10 @@ function Groovy() {
                 >
                   <RiSoundModuleFill size={27} id='brass-icon'/>
                   <div className="metronome hidden" id="brass-metronome">
-                    <div className="circle" />
-                    <div className="circle" />
-                    <div className="circle" />
-                    <div className="circle" />
+                    <div className="circle brass-circle" />
+                    <div className="circle brass-circle" />
+                    <div className="circle brass-circle" />
+                    <div className="circle brass-circle" />
                   </div>
                   brass
                 </div>
@@ -342,10 +388,10 @@ function Groovy() {
                 >
                   <RiSoundModuleFill size={27} id='bass1-icon'/>
                   <div className="metronome hidden" id="bass1-metronome">
-                    <div className="circle" />
-                    <div className="circle" />
-                    <div className="circle" />
-                    <div className="circle" />
+                    <div className="circle bass1-circle" />
+                    <div className="circle bass1-circle" />
+                    <div className="circle bass1-circle" />
+                    <div className="circle bass1-circle" />
                   </div>
                   bass
                 </div>
@@ -386,15 +432,20 @@ function Groovy() {
                 <input type="range" defaultValue={50} max={100} min={0} />
               </div>
 
-              <div className="record">
+              <div className="record" onClick={record} id='record'>
                 <FaRecordVinyl size={40} />
                 <br />
                 Record
               </div>
+              <div className="record hidden" onClick={stop} id='stop'>
+                <FaStop size={40} />
+                <br />
+                Stop Recording
+              </div>
 
               <div className="timer">
                 <BsStopwatchFill size={25} color='#848484' />
-                00:00
+                {min < 10? '0'+String(min) : min}:{sec%60 < 10? '0'+String(sec%60) : sec%60}
               </div>
             </div>
           </div>

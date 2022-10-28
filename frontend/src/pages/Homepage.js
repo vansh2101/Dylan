@@ -69,13 +69,10 @@ const Homepage = () => {
             <span className="gradient">ABOUT US</span>
           </h1>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui{" "}
+          Dylan is a DJ, an artist, a visionary, and a true genius! Now this genius is ready to share his artistry with the rest of the world! 
+          <br />
+          <br />
+          DYLAN brings to you custom audios, collaborations, private parties, concert bookings and much more all on this one amazing platform!
           </p>
         </div>
         <div>
@@ -92,10 +89,7 @@ const Homepage = () => {
           </h1>
 
           <p>
-            lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat.
+          Book Dylan for private houseparties, live concerts and charity events and bring pop and groove at everyone’s feet by booking his services all on this easy to access platform, so what are you waiting for? Put your daddy’s money to good use and book Dylan now!
           </p>
         </div>
 
@@ -134,13 +128,11 @@ const Homepage = () => {
             <span className="gradient">OUR PROCESS</span>
           </h1>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui{" "}
+          You choose our service, <br />
+          You put your credit card information, put in the OTP,<br />
+          Just a few simple clicks,<br />
+          and BAM! You are done!<br />
+          Just sit back and relax and plan your awesome rager without any stress about the tunes.
           </p>
         </div>
         <div className="cards">

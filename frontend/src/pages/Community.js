@@ -14,6 +14,7 @@ const Community = () => {
   const [pause, setPause] = useState([-1, false])
   const [inte, setInte] = useState()
   const [playing, setPlaying] = useState([])
+  const [start, setStart] = useState([-1, false])
 
   let ms = 0;
   let s = 0;
@@ -85,6 +86,17 @@ const Community = () => {
     setPause([-1, false])
   }
 
+  const play_music = (id) => {
+    if(!start[1]){
+      document.getElementById(id).play()
+      setStart([id,true])
+    }
+    else{
+      document.getElementById(id).pause()
+      setStart([-1, false])
+    }
+  }
+
   useEffect(() => {
     fetch('http://localhost:8000/posts/get/')
     .then((res) => res.json())
@@ -98,7 +110,7 @@ const Community = () => {
     <main>
       <Navbar loggedIn={true} />
       <div className="flexbox">
-        <Card />
+        <Card text={'Highlight Tribe'} user={'Nav, Dylan'} onClick={() => play_music('tribe')} pause={start[0] == 'tribe' ? true: false} />
 
         <div className="grid2">
           <h1>
@@ -189,6 +201,10 @@ const Community = () => {
 
         <audio id="bass1" controls loop>
           <source src={"audio/bass1.wav"} type="audio/wav" />
+        </audio>
+
+        <audio id="tribe" controls loop>
+          <source src={"audio/highlighttribe.mp3"} type="audio/mp3" />
         </audio>
       </div>
     </main>

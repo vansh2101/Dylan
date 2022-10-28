@@ -43,4 +43,11 @@
 }
 .track-container .sbox{
     margin-bottom: 1.7%;
+    width: 21.5%;
+    height: 300px;
+}
+
+.flexbox .sbox{
+    width: 21.5%;
+    height: 300px;
 }

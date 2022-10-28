@@ -143,7 +143,7 @@ function Groovy() {
       <div className="split">
         <Menu highlight={'groovy'} />
 
-        <div className="container">
+        <div className="container center">
           <div className="banner">
             <h1>
               Discover the best beats
@@ -152,8 +152,8 @@ function Groovy() {
             </h1>
 
             <div className="flex">
-              <Link to='/community'><button>Explore</button></Link>
-              <Link to='/groovy'><button>Create</button></Link>
+              <Link to='/community'><button className="communityButton">Explore</button></Link>
+              <Link to='/groovy'><button className="communityButton">Create</button></Link>
             </div>
           </div>
 

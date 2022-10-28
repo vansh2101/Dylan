@@ -17,7 +17,7 @@ const Navbar = ({loggedIn=false}) => {
           <li><a href='/#process'>Our Process</a></li>
           <li><a href='/#mixes'>{loggedIn? 'Dylan\'s Mix': 'My Mixes'}</a></li>
           {!loggedIn?
-          <Link to='/login'><button>Community</button></Link>
+          <Link to='/login'><button className='communityButton'>Community</button></Link>
           :
           <>
           <div className='searchbar'>

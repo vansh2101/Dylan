@@ -18,7 +18,7 @@ const Community = () => {
             Discover the best beats, create them, upload them!
           </p>
           <Link to="/groovy">
-            <button>Launch Groovy</button>
+            <button className="communityButton">Launch Groovy</button>
           </Link>
         </div>
 

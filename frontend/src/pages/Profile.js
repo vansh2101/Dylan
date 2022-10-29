@@ -103,7 +103,7 @@ function Profile() {
     const audio = saved[postkey]
 
     const data = {
-      'id': localStorage.getItem('user'),
+      'id': localStorage.getItem('groovyuser'),
       'title': audio.title,
       'audio': audio.audio
     }
@@ -131,7 +131,7 @@ function Profile() {
     fetch('https://groovyapi.herokuapp.com/posts/fetch/', {
       method: 'POST',
       headers: {"Content-Type": "application/json"},
-      body: JSON.stringify({'id': localStorage.getItem('user')}),
+      body: JSON.stringify({'id': localStorage.getItem('groovyuser')}),
     })
     .then((res) => res.json())
     .then((data) => {
@@ -146,7 +146,7 @@ function Profile() {
     fetch('https://groovyapi.herokuapp.com/users/get/', {
       method: 'POST',
       headers: {"Content-Type": "application/json"},
-      body: JSON.stringify({'id': localStorage.getItem('user')}),
+      body: JSON.stringify({'id': localStorage.getItem('groovyuser')}),
     })
     .then((res) => res.json())
     .then((data) => {
@@ -156,7 +156,7 @@ function Profile() {
     fetch('https://groovyapi.herokuapp.com/groovy/get/', {
       method: 'POST',
       headers: {"Content-Type": "application/json"},
-      body: JSON.stringify({'id': localStorage.getItem('user')}),
+      body: JSON.stringify({'id': localStorage.getItem('groovyuser')}),
     })
     .then((res) => res.json())
     .then((data) => {

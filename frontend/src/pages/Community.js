@@ -6,7 +6,7 @@ import Card from "../components/Card";
 
 const Community = () => {
 
-  if (!localStorage.getItem('user')){
+  if (!localStorage.getItem('groovyuser')){
     window.location ='/login'
   }
 

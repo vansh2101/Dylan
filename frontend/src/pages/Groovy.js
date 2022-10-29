@@ -7,7 +7,7 @@ import { BsStopwatchFill } from "react-icons/bs";
 import { RiSoundModuleFill } from "react-icons/ri";
 
 function Groovy() {
-  if (!localStorage.getItem("user")) {
+  if (!localStorage.getItem("groovyuser")) {
     window.location = "/login";
   }
 
@@ -155,7 +155,7 @@ function Groovy() {
     const data = {
       title: document.getElementById('title').value,
       audio: audio,
-      id: localStorage.getItem("user"),
+      id: localStorage.getItem("groovyuser"),
     };
     fetch("https://groovyapi.herokuapp.com/groovy/post/", {
       method: "POST",

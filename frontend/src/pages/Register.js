@@ -4,7 +4,7 @@ import "../styles/Account.css";
 import logo from "../static/logo.png";
 
 const Register = () => {
-  if (localStorage.getItem('user')){
+  if (localStorage.getItem('groovyuser')){
     window.location ='/community'
   }
   

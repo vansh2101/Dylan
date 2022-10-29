@@ -15,7 +15,7 @@ import { Link } from "react-router-dom";
 function Menu({highlight}) {
 
   const logout = () => {
-    localStorage.removeItem('user')
+    localStorage.removeItem('groovyuser')
     window.location = '/'
   }
 

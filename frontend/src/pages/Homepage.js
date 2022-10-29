@@ -48,13 +48,11 @@ const Homepage = () => {
           </div>
           <br />
           <p>
-            A once-in-a-fucking-lifetime experience for all aspiring
-            billionaires to come and start a revolution.{" "}
+          A once-in-a-lifetime experience for all aspiring artists to come and start a revolution.
           </p>
           <br />
           <p className="italic">
-            “Three days of partying, sucking, and fucking on a plot of land so
-            far out, Nevada barely wants it.”
+          “Days of grooving, creating and uploading on a platform used by everyone. Come to experience the Dylan Experience.”
           </p>
         </div>
 
@@ -72,7 +70,7 @@ const Homepage = () => {
           Dylan is a DJ, an artist, a visionary, and a true genius! Now this genius is ready to share his artistry with the rest of the world! 
           <br />
           <br />
-          DYLAN brings to you custom audios, collaborations, private parties, concert bookings and much more all on this one amazing platform!
+          Dylan brings to you custom audios, collaborations, private parties, concert bookings and much more all on this one amazing platform!
           </p>
         </div>
         <div>

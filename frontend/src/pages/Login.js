@@ -5,7 +5,7 @@ import logo from "../static/logo.png";
 
 const Login = () => {
 
-  if (localStorage.getItem('user')){
+  if (localStorage.getItem('groovyuser')){
     window.location ='/community'
   }
   const [msg, setMsg] = useState();
@@ -27,7 +27,7 @@ const Login = () => {
         if (res.url.endsWith("login")) {
           setMsg("Invalid Credentials");
         } else {
-          localStorage.setItem('user', data.username)
+          localStorage.setItem('groovyuser', data.username)
           window.location = "/community";
         }
       }

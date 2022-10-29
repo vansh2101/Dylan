@@ -15,7 +15,7 @@ router.get('/', (req, res) => {
 
 
 router.post('/get', (req, res) => {
-    User.findOne({user: req.body.id}, (err, user) => {
+    User.findOne({username: req.body.id}, (err, user) => {
         if (!err){
             res.json(user);
         }

@@ -211,6 +211,70 @@ const Community = () => {
         <audio id="tribe1" controls loop>
           <source src={"audio/highlighttribe.mp3"} type="audio/mp3" />
         </audio>
+
+        <audio id="beat5" controls loop>
+          <source src={"audio/beat5.mp3"} type="audio/mp3" />
+        </audio>
+
+        <audio id="beat6" controls loop>
+          <source src={"audio/beat6.mp3"} type="audio/mp3" />
+        </audio>
+
+        <audio id="beat7" controls loop>
+          <source src={"audio/beat7.mp3"} type="audio/mp3" />
+        </audio>
+
+        <audio id="beat8" controls loop>
+          <source src={"audio/beat8.mp3"} type="audio/mp3" />
+        </audio>
+
+        <audio id="synth2" controls loop>
+          <source src={"audio/synth2.mp3"} type="audio/mp3" />
+        </audio>
+
+        <audio id="whistle" controls loop>
+          <source src={"audio/whistle.mp3"} type="audio/mp3" />
+        </audio>
+
+        <audio id="choir" controls loop>
+          <source src={"audio/choir.mp3"} type="audio/mp3" />
+        </audio>
+
+        <audio id="synth3" controls loop>
+          <source src={"audio/synth3.mp3"} type="audio/mp3" />
+        </audio>
+
+        <audio id="bass2" controls loop>
+          <source src={"audio/bass2.mp3"} type="audio/mp3" />
+        </audio>
+
+        <audio id="pad1" controls loop>
+          <source src={"audio/pad1.mp3"} type="audio/mp3" />
+        </audio>
+
+        <audio id="synth4" controls loop>
+          <source src={"audio/synth4.mp3"} type="audio/mp3" />
+        </audio>
+
+        <audio id="brass1" controls loop>
+          <source src={"audio/brass1.mp3"} type="audio/mp3" />
+        </audio>
+
+        <audio id="keys1" controls loop>
+          <source src={"audio/keys1.mp3"} type="audio/mp3" />
+        </audio>
+
+        <audio id="mallets" controls loop>
+          <source src={"audio/mallets.mp3"} type="audio/mp3" />
+        </audio>
+
+        <audio id="strings2" controls loop>
+          <source src={"audio/strings2.mp3"} type="audio/mp3" />
+        </audio>
+
+        <audio id="pluck" controls loop>
+          <source src={"audio/pluck.mp3"} type="audio/mp3" />
+        </audio>
       </div>
     </main>
   );

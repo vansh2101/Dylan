@@ -35,6 +35,22 @@ function Groovy() {
     bass: false,
     brass: false,
     bass1: false,
+    beat5: false,
+    beat6: false,
+    beat7: false,
+    beat8: false,
+    synth2: false,
+    whistle: false,
+    choir: false,
+    synth3: false,
+    bass2: false,
+    pad1: false,
+    synth4: false,
+    brass1: false,
+    keys1: false,
+    mallets: false,
+    strings2: false,
+    pluck: false,
   });
 
   const [groups, setGroups] = useState({
@@ -438,31 +454,175 @@ function Groovy() {
               </div>
 
               <div className="tile-container">
-                <div className="tile yellow"></div>
-                <div className="tile yellow"></div>
-                <div className="tile yellow"></div>
-                <div className="tile yellow"></div>
+                <div className="tile yellow" id="beat5-tile" onClick={() => play("beat5", "yellow")}>
+                  <RiSoundModuleFill size={27} id="beat5-icon" />
+                  <div className="metronome hidden" id="beat5-metronome">
+                    <div className="circle beat5-circle" />
+                    <div className="circle beat5-circle" />
+                    <div className="circle beat5-circle" />
+                    <div className="circle beat5-circle" />
+                  </div>
+                  beat
+                </div>
+                <div className="tile yellow" id="beat6-tile" onClick={() => play("beat6", "yellow")}>
+                <RiSoundModuleFill size={27} id="beat6-icon" />
+                  <div className="metronome hidden" id="beat6-metronome">
+                    <div className="circle beat6-circle" />
+                    <div className="circle beat6-circle" />
+                    <div className="circle beat6-circle" />
+                    <div className="circle beat6-circle" />
+                  </div>
+                  beat
+                </div>
+                <div className="tile yellow" id="beat7-tile" onClick={() => play("beat7", "yellow")}>
+                <RiSoundModuleFill size={27} id="beat7-icon" />
+                  <div className="metronome hidden" id="beat7-metronome">
+                    <div className="circle beat7-circle" />
+                    <div className="circle beat7-circle" />
+                    <div className="circle beat7-circle" />
+                    <div className="circle beat7-circle" />
+                  </div>
+                  beat
+                </div>
+                <div className="tile yellow" id="beat8-tile" onClick={() => play("beat8", "yellow")}>
+                <RiSoundModuleFill size={27} id="beat8-icon" />
+                  <div className="metronome hidden" id="beat8-metronome">
+                    <div className="circle beat8-circle" />
+                    <div className="circle beat8-circle" />
+                    <div className="circle beat8-circle" />
+                    <div className="circle beat8-circle" />
+                  </div>
+                  beat
+                </div>
               </div>
 
               <div className="tile-container">
-                <div className="tile brown"></div>
-                <div className="tile brown"></div>
-                <div className="tile brown"></div>
-                <div className="tile brown"></div>
+                <div className="tile brown" id="synth2-tile" onClick={() => play("synth2", "brown")}>
+                  <RiSoundModuleFill size={27} id="synth2-icon" />
+                  <div className="metronome hidden" id="synth2-metronome">
+                    <div className="circle synth2-circle" />
+                    <div className="circle synth2-circle" />
+                    <div className="circle synth2-circle" />
+                    <div className="circle synth2-circle" />
+                  </div>
+                  synth
+                </div>
+                <div className="tile brown" id="whistle-tile" onClick={() => play("whistle", "brown")}>
+                <RiSoundModuleFill size={27} id="whistle-icon" />
+                  <div className="metronome hidden" id="whistle-metronome">
+                    <div className="circle whistle-circle" />
+                    <div className="circle whistle-circle" />
+                    <div className="circle whistle-circle" />
+                    <div className="circle whistle-circle" />
+                  </div>
+                  whistle
+                </div>
+                <div className="tile brown" id="choir-tile" onClick={() => play("choir", "brown")}>
+                <RiSoundModuleFill size={27} id="choir-icon" />
+                  <div className="metronome hidden" id="choir-metronome">
+                    <div className="circle choir-circle" />
+                    <div className="circle choir-circle" />
+                    <div className="circle choir-circle" />
+                    <div className="circle choir-circle" />
+                  </div>
+                  choir
+                </div>
+                <div className="tile brown" id="synth3-tile" onClick={() => play("synth3", "brown")}>
+                <RiSoundModuleFill size={27} id="synth3-icon" />
+                  <div className="metronome hidden" id="synth3-metronome">
+                    <div className="circle synth3-circle" />
+                    <div className="circle synth3-circle" />
+                    <div className="circle synth3-circle" />
+                    <div className="circle synth3-circle" />
+                  </div>
+                  synth
+                </div>
               </div>
 
               <div className="tile-container">
-                <div className="tile blue"></div>
-                <div className="tile blue"></div>
-                <div className="tile blue"></div>
-                <div className="tile blue"></div>
+                <div className="tile blue" id="bass2-tile" onClick={() => play("bass2", "blue")}>
+                <RiSoundModuleFill size={27} id="bass2-icon" />
+                  <div className="metronome hidden" id="bass2-metronome">
+                    <div className="circle bass2-circle" />
+                    <div className="circle bass2-circle" />
+                    <div className="circle bass2-circle" />
+                    <div className="circle bass2-circle" />
+                  </div>
+                  bass
+                </div>
+                <div className="tile blue" id="pad1-tile" onClick={() => play("pad1", "blue")}>
+                <RiSoundModuleFill size={27} id="pad1-icon" />
+                  <div className="metronome hidden" id="pad1-metronome">
+                    <div className="circle pad1-circle" />
+                    <div className="circle pad1-circle" />
+                    <div className="circle pad1-circle" />
+                    <div className="circle pad1-circle" />
+                  </div>
+                  pad
+                </div>
+                <div className="tile blue" id="synth4-tile" onClick={() => play("synth4", "blue")}>
+                <RiSoundModuleFill size={27} id="synth4-icon" />
+                  <div className="metronome hidden" id="synth4-metronome">
+                    <div className="circle synth4-circle" />
+                    <div className="circle synth4-circle" />
+                    <div className="circle synth4-circle" />
+                    <div className="circle synth4-circle" />
+                  </div>
+                  synth
+                </div>
+                <div className="tile blue" id="brass1-tile" onClick={() => play("brass1", "blue")}>
+                  <RiSoundModuleFill size={27} id="brass1-icon" />
+                  <div className="metronome hidden" id="brass1-metronome">
+                    <div className="circle brass1-circle" />
+                    <div className="circle brass1-circle" />
+                    <div className="circle brass1-circle" />
+                    <div className="circle brass1-circle" />
+                  </div>
+                  brass
+                </div>
               </div>
 
               <div className="tile-container">
-                <div className="tile pink"></div>
-                <div className="tile pink"></div>
-                <div className="tile pink"></div>
-                <div className="tile pink"></div>
+                <div className="tile pink" id="keys1-tile" onClick={() => play("keys1", "pink")}>
+                <RiSoundModuleFill size={27} id="keys1-icon" />
+                  <div className="metronome hidden" id="keys1-metronome">
+                    <div className="circle keys1-circle" />
+                    <div className="circle keys1-circle" />
+                    <div className="circle keys1-circle" />
+                    <div className="circle keys1-circle" />
+                  </div>
+                  keys1
+                </div>
+                <div className="tile pink" id="mallets-tile" onClick={() => play("mallets", "pink")}>
+                <RiSoundModuleFill size={27} id="mallets-icon" />
+                  <div className="metronome hidden" id="mallets-metronome">
+                    <div className="circle mallets-circle" />
+                    <div className="circle mallets-circle" />
+                    <div className="circle mallets-circle" />
+                    <div className="circle mallets-circle" />
+                  </div>
+                  mallets
+                </div>
+                <div className="tile pink" id="strings2-tile" onClick={() => play("strings2", "pink")}>
+                <RiSoundModuleFill size={27} id="strings2-icon" />
+                  <div className="metronome hidden" id="strings2-metronome">
+                    <div className="circle strings2-circle" />
+                    <div className="circle strings2-circle" />
+                    <div className="circle strings2-circle" />
+                    <div className="circle strings2-circle" />
+                  </div>
+                  strings
+                </div>
+                <div className="tile pink" id="pluck-tile" onClick={() => play("pluck", "pink")}>
+                <RiSoundModuleFill size={27} id="pluck-icon" />
+                  <div className="metronome hidden" id="pluck-metronome">
+                    <div className="circle pluck-circle" />
+                    <div className="circle pluck-circle" />
+                    <div className="circle pluck-circle" />
+                    <div className="circle pluck-circle" />
+                  </div>
+                  pluck
+                </div>
               </div>
             </div>
 
@@ -582,6 +742,70 @@ function Groovy() {
 
         <audio id="bass1" controls loop>
           <source src={"audio/bass1.wav"} type="audio/wav" />
+        </audio>
+
+        <audio id="beat5" controls loop>
+          <source src={"audio/beat5.mp3"} type="audio/mp3" />
+        </audio>
+
+        <audio id="beat6" controls loop>
+          <source src={"audio/beat6.mp3"} type="audio/mp3" />
+        </audio>
+
+        <audio id="beat7" controls loop>
+          <source src={"audio/beat7.mp3"} type="audio/mp3" />
+        </audio>
+
+        <audio id="beat8" controls loop>
+          <source src={"audio/beat8.mp3"} type="audio/mp3" />
+        </audio>
+
+        <audio id="synth2" controls loop>
+          <source src={"audio/synth2.mp3"} type="audio/mp3" />
+        </audio>
+
+        <audio id="whistle" controls loop>
+          <source src={"audio/whistle.mp3"} type="audio/mp3" />
+        </audio>
+
+        <audio id="choir" controls loop>
+          <source src={"audio/choir.mp3"} type="audio/mp3" />
+        </audio>
+
+        <audio id="synth3" controls loop>
+          <source src={"audio/synth3.mp3"} type="audio/mp3" />
+        </audio>
+
+        <audio id="bass2" controls loop>
+          <source src={"audio/bass2.mp3"} type="audio/mp3" />
+        </audio>
+
+        <audio id="pad1" controls loop>
+          <source src={"audio/pad1.mp3"} type="audio/mp3" />
+        </audio>
+
+        <audio id="synth4" controls loop>
+          <source src={"audio/synth4.mp3"} type="audio/mp3" />
+        </audio>
+
+        <audio id="brass1" controls loop>
+          <source src={"audio/brass1.mp3"} type="audio/mp3" />
+        </audio>
+
+        <audio id="keys1" controls loop>
+          <source src={"audio/keys1.mp3"} type="audio/mp3" />
+        </audio>
+
+        <audio id="mallets" controls loop>
+          <source src={"audio/mallets.mp3"} type="audio/mp3" />
+        </audio>
+
+        <audio id="strings2" controls loop>
+          <source src={"audio/strings2.mp3"} type="audio/mp3" />
+        </audio>
+
+        <audio id="pluck" controls loop>
+          <source src={"audio/pluck.mp3"} type="audio/mp3" />
         </audio>
       </div>
     </>

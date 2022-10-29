@@ -21,7 +21,7 @@ const Register = () => {
       pass2: document.getElementById("pass").value,
     };
 
-    fetch("http://localhost:8000/auth/register/", {
+    fetch("https://groovyapi.herokuapp.com/auth/register/", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),

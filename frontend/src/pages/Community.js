@@ -98,7 +98,7 @@ const Community = () => {
   }
 
   useEffect(() => {
-    fetch('http://localhost:8000/posts/get/')
+    fetch('https://groovyapi.herokuapp.com/posts/get/')
     .then((res) => res.json())
     .then((data) => {
       console.log(data)

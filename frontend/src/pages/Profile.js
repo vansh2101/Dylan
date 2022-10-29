@@ -128,7 +128,7 @@ function Profile() {
   }
 
   const fetch_posts = () => {
-    fetch('http://localhost:8000/posts/fetch/', {
+    fetch('https://groovyapi.herokuapp.com/posts/fetch/', {
       method: 'POST',
       headers: {"Content-Type": "application/json"},
       body: JSON.stringify({'id': localStorage.getItem('user')}),
@@ -143,7 +143,7 @@ function Profile() {
     
     fetch_posts()
 
-    fetch('http://localhost:8000/users/get/', {
+    fetch('https://groovyapi.herokuapp.com/users/get/', {
       method: 'POST',
       headers: {"Content-Type": "application/json"},
       body: JSON.stringify({'id': localStorage.getItem('user')}),
@@ -153,7 +153,7 @@ function Profile() {
       setUser(data)
     })
 
-    fetch('http://localhost:8000/groovy/get/', {
+    fetch('https://groovyapi.herokuapp.com/groovy/get/', {
       method: 'POST',
       headers: {"Content-Type": "application/json"},
       body: JSON.stringify({'id': localStorage.getItem('user')}),

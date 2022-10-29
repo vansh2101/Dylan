@@ -157,7 +157,7 @@ function Groovy() {
       audio: audio,
       id: localStorage.getItem("user"),
     };
-    fetch("http://localhost:8000/groovy/post/", {
+    fetch("https://groovyapi.herokuapp.com/groovy/post/", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),

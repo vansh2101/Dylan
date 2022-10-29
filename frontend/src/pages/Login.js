@@ -18,7 +18,7 @@ const Login = () => {
       password: document.getElementById("pass").value,
     };
 
-    fetch("http://localhost:8000/auth/login/", {
+    fetch("https://groovyapi.herokuapp.com/auth/login/", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),

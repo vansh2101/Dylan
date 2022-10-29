@@ -120,7 +120,7 @@ function Profile() {
       console.log(data)
     })
     
-    fetch_posts()
+    fetch_posts(true)
     cancel()
 
   }
@@ -129,7 +129,7 @@ function Profile() {
     document.getElementById('modal').style.display = 'none'
   }
 
-  const fetch_posts = () => {
+  const fetch_posts = (load=false) => {
     setLoad(true)
     fetch('https://groovyapi.herokuapp.com/posts/fetch/', {
       method: 'POST',
@@ -139,6 +139,8 @@ function Profile() {
     .then((res) => res.json())
     .then((data) => {
       setPosts(data)
+
+      if(load){setLoad(false)}
     })
   }
 
@@ -146,7 +148,6 @@ function Profile() {
     document.getElementById('loader').style.display = 'block'
     fetch_posts()
 
-    console.log(localStorage.getItem('groovyuser'))
     fetch('https://groovyapi.herokuapp.com/users/get/', {
       method: 'POST',
       headers: {"Content-Type": "application/json"},

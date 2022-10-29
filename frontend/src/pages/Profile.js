@@ -146,6 +146,7 @@ function Profile() {
     document.getElementById('loader').style.display = 'block'
     fetch_posts()
 
+    console.log(localStorage.getItem('groovyuser'))
     fetch('https://groovyapi.herokuapp.com/users/get/', {
       method: 'POST',
       headers: {"Content-Type": "application/json"},
@@ -153,6 +154,7 @@ function Profile() {
     })
     .then((res) => res.json())
     .then((data) => {
+      console.log(data)
       setUser(data)
     })
 

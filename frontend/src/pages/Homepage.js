@@ -13,6 +13,9 @@ import logo from "../static/logo.png";
 import service1 from "../static/service1.png";
 import service2 from "../static/service2.png";
 import service3 from "../static/service3.png";
+import mix1 from "../static/mix1.png";
+import mix2 from "../static/mix2.png";
+import mix3 from "../static/mix4.png";
 import { AiFillPlayCircle, AiOutlineRight } from "react-icons/ai";
 
 const Homepage = () => {
@@ -158,9 +161,9 @@ const Homepage = () => {
           </h1>
         </div>
         <div className="box">
-          <Card text={'Never Sleep'} user={'Nav, Dylan'} onClick={() => play('beat1')} pause={start[0] == 'beat1' ? true: false}/>
-          <Card text={'Seedhe Maut'} user={'Nav, Dylan'} onClick={() => play('beat2')} pause={start[0] == 'beat2' ? true: false}/>
-          <Card text={'Shorty'} user={'Nav, Dylan'} onClick={() => play('beat3')} pause={start[0] == 'beat3' ? true: false}/>
+          <Card text={'Never Sleep'} user={'Nav, Dylan'} onClick={() => play('beat1')} pause={start[0] == 'beat1' ? true: false} img={mix1}/>
+          <Card text={'Seedhe Maut'} user={'Nav, Dylan'} onClick={() => play('beat2')} pause={start[0] == 'beat2' ? true: false} img={mix2}/>
+          <Card text={'Shorty'} user={'Nav, Dylan'} onClick={() => play('beat3')} pause={start[0] == 'beat3' ? true: false} img={mix3}/>
         </div>
         <div className="hidden">
         <audio id="beat1" controls loop>

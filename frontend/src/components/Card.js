@@ -1,12 +1,14 @@
-import React from "react";
+import React, {useState} from "react";
 import '../styles/Components.css'
 import { AiFillPlayCircle, AiFillPauseCircle } from "react-icons/ai";
 import { BsPlusCircle, BsPlusSquareFill } from "react-icons/bs";
 import music from '../static/music.gif'
 
-function Card({text, user, id, onClick, modalOnClick, pause=false, audio=false}) {
+function Card({text, user, id, onClick, modalOnClick, img, pause=false, audio=false}) {
+
   return (
     <div className="sbox" id={id}>
+      <img src={img} />
       {id? <BsPlusCircle size={50} color="#9E9E9E" /> : <></>}
       {audio? <BsPlusSquareFill className="addpost" onClick={modalOnClick} />: <></>}
       <div className="player" style={id=='add'? {display: 'none'}: {}}>

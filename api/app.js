@@ -11,7 +11,7 @@ const passport_init = require('./auth');
 //? Initialized
 passport_init(passport)
 
-mongoose.connect('mongodb+srv://vansh:vansh123@cluster0.tflxusx.mongodb.net/community?retryWrites=true&w=majority', {
+mongoose.connect(process.env.DB, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 })

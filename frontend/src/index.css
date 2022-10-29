@@ -43,7 +43,7 @@ body::-webkit-scrollbar {
   }
   ::-webkit-scrollbar-track {
     /* background: #fff; */
-    background: #f0f0f0;
+    background: #121212;
   }
   ::-webkit-scrollbar-thumb {
     border-radius: 5px;

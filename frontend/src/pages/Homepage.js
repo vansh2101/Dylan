@@ -14,6 +14,7 @@ import service1 from "../static/service1.png";
 import service2 from "../static/service2.png";
 import service3 from "../static/service3.png";
 import { AiFillPlayCircle, AiOutlineRight } from "react-icons/ai";
+import Footer from '../components/Footer'
 
 const Homepage = () => {
 
@@ -31,6 +32,7 @@ const Homepage = () => {
   }
 
   return (
+    <>
     <main>
       <Navbar />
       <div className="home" id="home">
@@ -177,6 +179,8 @@ const Homepage = () => {
         </div>
       </div>
     </main>
+      <Footer/>
+      </>
   );
 };
 

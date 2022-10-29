@@ -27,7 +27,7 @@ const Login = () => {
       body: JSON.stringify(data),
     }).then((res) => {
       if (res.ok) {
-        if (res.url.endsWith("login")) {
+        if (res.url.endsWith("auth")) {
           setMsg("Invalid Credentials");
           setLoad(false)
         } else {

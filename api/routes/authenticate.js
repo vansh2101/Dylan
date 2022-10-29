@@ -17,6 +17,8 @@ router.get('/', (req, res) => {
 
 
 router.post('/login', passport.authenticate('local',{
+    successRedirect: '/groovy',
+    failureRedirect: '/auth',
     failureFlash: true,
     failureMessage: true
 }));

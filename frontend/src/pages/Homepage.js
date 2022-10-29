@@ -17,6 +17,7 @@ import mix1 from "../static/mix1.png";
 import mix2 from "../static/mix2.png";
 import mix3 from "../static/mix4.png";
 import { AiFillPlayCircle, AiOutlineRight } from "react-icons/ai";
+import Footer from '../components/Footer'
 
 const Homepage = () => {
 
@@ -34,6 +35,7 @@ const Homepage = () => {
   }
 
   return (
+    <>
     <main>
       <Navbar />
       <div className="home" id="home">
@@ -180,6 +182,8 @@ const Homepage = () => {
         </div>
       </div>
     </main>
+      <Footer/>
+      </>
   );
 };
 

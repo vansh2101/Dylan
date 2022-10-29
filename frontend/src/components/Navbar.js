@@ -11,7 +11,7 @@ const Navbar = ({loggedIn=false}) => {
         <div className='logo'>
           <Link to='/'><img src={logo} /></Link>
         </div>
-        <ul style={loggedIn? {'width': '80%'} : {}}>
+        <ul style={loggedIn? {'width': '80%'} : {}} className="ulNav">
           <li><a href='/#about'>About us</a></li>
           <li><a href='/#service'>Our Services</a></li>
           <li><a href='/#process'>Our Process</a></li>

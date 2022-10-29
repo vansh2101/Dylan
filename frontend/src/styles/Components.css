@@ -79,7 +79,7 @@ li a:hover{
     background-image: url(../static/mix1.png);
     background-size: cover;
     width: 21.5vw;
-    height: 345px;
+    height: 20vw;
     border-radius: 20px;
     position: relative;
 }

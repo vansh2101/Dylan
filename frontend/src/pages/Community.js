@@ -124,15 +124,10 @@ const Community = () => {
           </Link>
         </div>
 
-        <Card />
+        <Card text={'My Tribe'} user={'Nav, Dylan'} onClick={() => play_music('tribe1')} pause={start[0] == 'tribe1' ? true: false} />
       </div>
 
       <div className="track-container">
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-
         {post.map((track, key) => 
           <Card key={key} text={track.title} user={track.user} onClick={() => play(key)} pause={pause[0] == key? pause[1]: false} />
         )}
@@ -204,6 +199,10 @@ const Community = () => {
         </audio>
 
         <audio id="tribe" controls loop>
+          <source src={"audio/highlighttribe.mp3"} type="audio/mp3" />
+        </audio>
+
+        <audio id="tribe1" controls loop>
           <source src={"audio/highlighttribe.mp3"} type="audio/mp3" />
         </audio>
       </div>

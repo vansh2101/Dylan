@@ -36,7 +36,7 @@
 
 .track-container{
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     align-items: center;
     flex-wrap: wrap;
     margin-top: 1.7%;
@@ -45,6 +45,10 @@
     margin-bottom: 1.7%;
     width: 21.5%;
     height: 300px;
+    margin-right: 4.65%;
+}
+.track-container .sbox:nth-child(4n+0){
+    margin-right: 0;
 }
 
 .flexbox .sbox{

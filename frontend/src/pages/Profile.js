@@ -108,7 +108,7 @@ function Profile() {
       'audio': audio.audio
     }
 
-    fetch('http://localhost:8000/posts/post/', {
+    fetch('https://groovyapi.herokuapp.com/posts/post/', {
       method: 'POST',
       headers: {"Content-Type": "application/json"},
       body: JSON.stringify(data),

@@ -17,8 +17,8 @@ router.get('/', (req, res) => {
 
 
 router.post('/login', passport.authenticate('local',{
-    successRedirect: 'http://localhost:3000/',
-    failureRedirect: 'http://localhost:3000/login',
+    successRedirect: 'https://groovy.coreisus.com/',
+    failureRedirect: 'https://groovy.coreisus.com/login',
     failureFlash: true,
     failureMessage: true
 }));

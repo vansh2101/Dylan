@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "../styles/Account.css";
 import logo from "../static/logo.png";
+import loader from '../static/loader.gif'
 
 const Login = () => {
 
@@ -9,9 +10,11 @@ const Login = () => {
     window.location ='/community'
   }
   const [msg, setMsg] = useState();
+  const [load, setLoad] = useState(false)
 
   const login = (e) => {
     e.preventDefault();
+    setLoad(true)
 
     const data = {
       username: document.getElementById("username").value,
@@ -26,6 +29,7 @@ const Login = () => {
       if (res.ok) {
         if (res.url.endsWith("login")) {
           setMsg("Invalid Credentials");
+          setLoad(false)
         } else {
           localStorage.setItem('groovyuser', data.username)
           window.location = "/community";
@@ -37,6 +41,9 @@ const Login = () => {
   return (
     <>
       <main>
+      <div className="modal loading" id='loader' style={load?{display: 'block'}: {display: 'none'}}>
+          <img src={loader} />
+        </div>
         <div className="main">
           <Link to="/">
             <img src={logo} className="mylogo" />

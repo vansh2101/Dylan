@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react";
 import Menu from "../components/Menu";
 import Card from "../components/Card";
 import "../styles/Profile.css";
+import loader from '../static/loader.gif'
 import profile from "../static/profile.png";
 import { MdModeEdit } from "react-icons/md";
 import { BsPlusCircle } from "react-icons/bs";
@@ -16,6 +17,7 @@ function Profile() {
   const [playing, setPlaying] = useState([])
   const [postkey, setPostKey] = useState()
   const [type, setType] = useState('saved')
+  const [load, setLoad] = useState(true)
 
   let ms = 0;
   let s = 0;
@@ -128,6 +130,7 @@ function Profile() {
   }
 
   const fetch_posts = () => {
+    setLoad(true)
     fetch('https://groovyapi.herokuapp.com/posts/fetch/', {
       method: 'POST',
       headers: {"Content-Type": "application/json"},
@@ -140,7 +143,7 @@ function Profile() {
   }
 
   useEffect(() => {
-    
+    document.getElementById('loader').style.display = 'block'
     fetch_posts()
 
     fetch('https://groovyapi.herokuapp.com/users/get/', {
@@ -161,12 +164,18 @@ function Profile() {
     .then((res) => res.json())
     .then((data) => {
       setSaved(data)
+      setLoad(false)
     })
+
+    document.getElementById('loader').style.display = 'none'
   }, [])
 
   return (
     <>
       <div className="split">
+      <div className="modal loading" id='loader' style={load?{display: 'block'}: {display: 'none'}}>
+          <img src={loader} />
+        </div>
         <Menu highlight={"profile"} />
 
         <div className="container">

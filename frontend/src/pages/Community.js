@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import { Link } from "react-router-dom";
 import "../styles/Community.css";
+import loader from '../static/loader.gif'
 import Navbar from "../components/Navbar";
 import Card from "../components/Card";
 
@@ -15,6 +16,7 @@ const Community = () => {
   const [inte, setInte] = useState()
   const [playing, setPlaying] = useState([])
   const [start, setStart] = useState([-1, false])
+  const [load, setLoad] = useState(true)
 
   let ms = 0;
   let s = 0;
@@ -103,11 +105,15 @@ const Community = () => {
     .then((data) => {
       console.log(data)
       setPost(data)
+      setLoad(false)
     })
   }, [])
 
   return (
     <main>
+      <div className="modal loading" id='loader' style={load?{display: 'block'}: {display: 'none'}}>
+          <img src={loader} />
+        </div>
       <Navbar loggedIn={true} />
       <div className="flexbox">
         <Card text={'Highlight Tribe'} user={'Nav, Dylan'} onClick={() => play_music('tribe')} pause={start[0] == 'tribe' ? true: false} />

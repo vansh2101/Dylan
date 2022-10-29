@@ -142,3 +142,14 @@ a{
     from {top:-300px; opacity:0}
     to {top:0; opacity:1}
 }
+
+
+
+.loading{
+    background-color: rgba(0,0,0,0.7);
+    text-align: center;
+}
+.loading img{
+    width: 10%;
+    margin-top: 9%;
+}

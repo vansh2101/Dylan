@@ -5,17 +5,7 @@ import "../styles/Profile.css";
 import loader from '../static/loader.gif'
 import profile from "../static/profile.png";
 import { MdModeEdit } from "react-icons/md";
-import { BsPlusCircle } from "react-icons/bs";
-import mix1 from "../static/mix1.png"
-import mix2 from "../static/mix2.png"
-import mix3 from "../static/mix3.png"
-import mix4 from "../static/mix4.png"
-import mix5 from "../static/mix5.png"
-import mix6 from "../static/mix6.png"
-import mix7 from "../static/mix7.png"
-import mix8 from "../static/mix8.png"
-import mix9 from "../static/mix9.png"
-import mix10 from "../static/mix10.png"
+import { Link } from "react-router-dom";
 
 function Profile() {
 
@@ -29,8 +19,6 @@ function Profile() {
   const [type, setType] = useState('saved')
   const [load, setLoad] = useState(true)
 
-  let img = [mix1, mix2, mix3, mix4, mix5, mix6, mix7, mix8, mix9, mix10]
-  const [rand, setRand] = useState([])
 
   let ms = 0;
   let s = 0;
@@ -81,7 +69,7 @@ function Profile() {
       key = id
       const audio = post? posts[id].audio : saved[id].audio
       time = Object.keys(audio)
-      int = setInterval(timer, 10)
+      int = setInterval(timer, 5)
       if(post){
         setType('post')
         setPause([id, true, 'post'])
@@ -183,13 +171,6 @@ function Profile() {
       setSaved(data)
       setLoad(false)
 
-      let arr = []
-      for (let i = 0; i < data.length*2; i++){
-        const int = Math.floor(Math.random() * 10)
-        arr.push(img[int])
-      }
-      setRand(arr)
-
       document.getElementById('loader').style.display = 'none'
     })
 
@@ -197,6 +178,7 @@ function Profile() {
 
   return (
     <>
+      <Link to='/groovy' id="link" style={{display: 'none'}} />
       <div className="split">
       <div className="modal loading" id='loader' style={load?{display: 'block'}: {display: 'none'}}>
           <img src={loader} />
@@ -228,7 +210,7 @@ function Profile() {
               <h2>Your Posts</h2>
               <div className="recent">
                 {posts.map((track,key) => 
-                <Card key={key} text={track.title} user={track.user} onClick={() => play(key, true)} pause={pause[2] == 'post' ? pause[0] == key? pause[1]: false: false} img={rand[key +2]} />
+                <Card key={key} text={track.title} user={track.user} onClick={() => play(key, true)} pause={pause[2] == 'post' ? pause[0] == key? pause[1]: false: false} img={track.img} />
                 )}
               </div>
             </div>
@@ -239,7 +221,7 @@ function Profile() {
               {saved.map((track, key) => 
                 <Card key={key} text={track.title} audio={true} modalOnClick={() => openmodal(key)} user={track.user} onClick={() => play(key)} pause={pause[2] == 'saved' ? pause[0] == key? pause[1]: false: false} img={track.img} />
                 )}
-                <Card id='add' player={false} />
+                <Card id='add' player={false} onClick={() => {document.getElementById('link').click()}} />
               </div>
             </div>
           </div>

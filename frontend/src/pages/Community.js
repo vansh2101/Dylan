@@ -6,14 +6,6 @@ import Navbar from "../components/Navbar";
 import Card from "../components/Card";
 import mix1 from "../static/mix1.png"
 import mix2 from "../static/mix2.png"
-import mix3 from "../static/mix3.png"
-import mix4 from "../static/mix4.png"
-import mix5 from "../static/mix5.png"
-import mix6 from "../static/mix6.png"
-import mix7 from "../static/mix7.png"
-import mix8 from "../static/mix8.png"
-import mix9 from "../static/mix9.png"
-import mix10 from "../static/mix10.png"
 
 const Community = () => {
 
@@ -28,8 +20,6 @@ const Community = () => {
   const [start, setStart] = useState([-1, false])
   const [load, setLoad] = useState(true)
 
-  let img = [mix1, mix2, mix3, mix4, mix5, mix6, mix7, mix8, mix9, mix10]
-  const [rand, setRand] = useState([])
 
   let ms = 0;
   let s = 0;
@@ -80,7 +70,7 @@ const Community = () => {
       key = id
       const audio = post[id].audio
       time = Object.keys(audio)
-      int = setInterval(timer, 10)
+      int = setInterval(timer, 5)
       setPause([id, true])
       setInte(int)
     }
@@ -119,14 +109,6 @@ const Community = () => {
       console.log(data)
       setPost(data)
       setLoad(false)
-
-      let arr = []
-      for (let i = 0; i < data.length; i++){
-        const int = Math.floor(Math.random() * 10)
-        arr.push(img[int])
-      }
-      setRand(arr)
-
     })
   }, [])
 
@@ -151,12 +133,12 @@ const Community = () => {
           </Link>
         </div>
 
-        <Card text={'My Tribe'} user={'Nav, Dylan'} onClick={() => play_music('tribe1')} pause={start[0] == 'tribe1' ? true: false} img={img[1]} />
+        <Card text={'My Tribe'} user={'Nav, Dylan'} onClick={() => play_music('tribe1')} pause={start[0] == 'tribe1' ? true: false} img={mix2} />
       </div>
 
       <div className="track-container">
         {post.map((track, key) => 
-          <Card key={key} text={track.title} user={track.user} onClick={() => play(key)} pause={pause[0] == key? pause[1]: false} img={rand[key]}/>
+          <Card key={key} text={track.title} user={track.user} onClick={() => play(key)} pause={pause[0] == key? pause[1]: false} img={track.img}/>
         )}
       </div>
 

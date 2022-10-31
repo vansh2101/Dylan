@@ -44,7 +44,7 @@
 .track-container .sbox{
     margin-bottom: 1.7%;
     width: 21.5%;
-    height: 21vw;
+    height: 18.5vw;
     margin-right: 4.65%;
 }
 .track-container .sbox:nth-child(4n+0){
@@ -53,5 +53,5 @@
 
 .flexbox .sbox{
     width: 21.5%;
-    height: 21vw;
+    height: 18.5vw;
 }

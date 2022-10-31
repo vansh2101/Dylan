@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "../styles/Groovy.css";
+import loader from '../static/loader.gif'
 import Menu from "../components/Menu";
 import Card from "../components/Card";
 import { FaRecordVinyl, FaVolumeDown, FaStop } from "react-icons/fa";
@@ -20,6 +21,7 @@ function Groovy() {
   const [min, setMin] = useState(0);
   const [audio, setAudio] = useState({});
   const [img, setImg] = useState('');
+  const [load, setLoad] = useState(false)
 
   let ms = 0;
   let s = 0;
@@ -146,7 +148,7 @@ function Groovy() {
     console.log("started");
     setStarted(true);
     setAudio({});
-    const interval = setInterval(timer, 10);
+    const interval = setInterval(timer, 5);
     setInter(interval);
     document.getElementById("record").classList.add("hidden");
     document.getElementById("stop").classList.remove("hidden");
@@ -173,6 +175,7 @@ function Groovy() {
 
   const save = async (e) => {
     e.preventDefault();
+    setLoad(true)
     await upload(img)
 
     try{
@@ -197,12 +200,15 @@ function Groovy() {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
+        setLoad(false)
       });
 
     cancel()
   }
 
   const cancel = () => {
+    setImg('')
+    document.getElementById("title").value = '';
     document.getElementById('modal').style.display = 'none'
   }
 
@@ -230,6 +236,9 @@ function Groovy() {
 
   return (
     <>
+      <div className="modal loading" id='loader' style={load?{display: 'block'}: {display: 'none'}}>
+          <img src={loader} />
+        </div>
       <div className="split">
         <Menu highlight={"groovy"} />
 
@@ -691,7 +700,7 @@ function Groovy() {
         </div>
       </div>
 
-      <div className="modal" id="modal">
+      <div className="modal" id="modal" style={{zIndex: 0}}>
         <div className="modal-content" style={{marginTop: '0.5%'}}>
           <div className="header">
             <span>Save Track</span>

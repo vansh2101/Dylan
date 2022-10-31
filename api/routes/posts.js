@@ -43,6 +43,7 @@ router.post('/post', (req, res) => {
         user: req.body.id,
         audio: req.body.audio,
         title: req.body.title,
+        img: req.body.img,
     })
 
     posts.save()

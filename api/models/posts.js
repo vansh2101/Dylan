@@ -7,7 +7,8 @@ let postSchema = new mongoose.Schema({
     user: {type: String, required: true},
     title: {type: String, required: true},
     time: {type: String, default: datetime.create().format('H:M d-m-Y '), required: true},
-    audio: {type: Object, required: true}
+    audio: {type: Object, required: true},
+    img: {type: String, required: true}
 })
 
 module.exports = mongoose.model('posts', postSchema)

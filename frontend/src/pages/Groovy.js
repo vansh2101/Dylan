@@ -2,9 +2,12 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "../styles/Groovy.css";
 import Menu from "../components/Menu";
+import Card from "../components/Card";
 import { FaRecordVinyl, FaVolumeDown, FaStop } from "react-icons/fa";
 import { BsStopwatchFill } from "react-icons/bs";
 import { RiSoundModuleFill } from "react-icons/ri";
+import firebase from "firebase/compat/app";
+import 'firebase/compat/storage'
 
 function Groovy() {
   if (!localStorage.getItem("groovyuser")) {
@@ -16,6 +19,8 @@ function Groovy() {
   const [sec, setSec] = useState(0);
   const [min, setMin] = useState(0);
   const [audio, setAudio] = useState({});
+  const [img, setImg] = useState('');
+
   let ms = 0;
   let s = 0;
   const [status, setStatus] = useState({
@@ -166,12 +171,23 @@ function Groovy() {
     document.getElementById('modal').style.display = 'block'
   };
 
-  const save = (e) => {
+  const save = async (e) => {
     e.preventDefault();
+    await upload(img)
+
+    try{
+      var url = await firebase.storage().ref().child(localStorage.getItem("groovyuser") + '-' + document.getElementById('title').value).getDownloadURL()
+      }
+    catch(e){
+      console.log(e)
+    }
+
+
     const data = {
       title: document.getElementById('title').value,
       audio: audio,
       id: localStorage.getItem("groovyuser"),
+      img: url? url: null,
     };
     fetch("https://groovyapi.herokuapp.com/groovy/post/", {
       method: "POST",
@@ -188,6 +204,28 @@ function Groovy() {
 
   const cancel = () => {
     document.getElementById('modal').style.display = 'none'
+  }
+
+  const select_pic = () => {
+    document.getElementById("pic").click()
+  }
+
+  const display_pic = (event) => {
+    if (event.target.files && event.target.files[0]){
+      setImg(URL.createObjectURL(event.target.files[0]))
+    }
+  }
+
+  const upload = async (uri) => {
+    if (uri !== undefined){
+      const response = await fetch(uri)
+      const blob = await response.blob()
+
+      let path = localStorage.getItem("groovyuser") + '-' + document.getElementById('title').value
+
+      var ref = firebase.storage().ref().child(path)
+      return ref.put(blob)
+    }
   }
 
   return (
@@ -654,12 +692,14 @@ function Groovy() {
       </div>
 
       <div className="modal" id="modal">
-        <div className="modal-content">
+        <div className="modal-content" style={{marginTop: '0.5%'}}>
           <div className="header">
             <span>Save Track</span>
           </div>
 
           <div className="content">
+            <Card id='add' onClick={select_pic} img={img} required player={false} />
+
             <form>
               <input
                 type="text"
@@ -669,6 +709,7 @@ function Groovy() {
                 className="input"
                 required
               />
+              <input type="file" accept="image/png, image/jpg, image/jpeg" id="pic" style={{display: 'none'}} onChange={display_pic} />
 
               <div className="flex">
                 <button className="save" onClick={cancel}>Cancel</button>

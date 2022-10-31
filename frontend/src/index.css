@@ -112,6 +112,13 @@ a{
     opacity: 0.8;
 }
 
+.modal #add{
+    width: 23%;
+    height: 10vw;
+    margin-top: -2%;
+    margin-bottom: 3%;
+}
+
 .content{
     display: flex;
     flex-direction: column;

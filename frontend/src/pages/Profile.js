@@ -120,7 +120,8 @@ function Profile() {
     const data = {
       'id': localStorage.getItem('groovyuser'),
       'title': audio.title,
-      'audio': audio.audio
+      'audio': audio.audio,
+      'img': audio.img
     }
 
     fetch('https://groovyapi.herokuapp.com/posts/post/', {
@@ -236,9 +237,9 @@ function Profile() {
               <h2>Saved Tracks</h2>
               <div className="recent">
               {saved.map((track, key) => 
-                <Card key={key} text={track.title} audio={true} modalOnClick={() => openmodal(key)} user={track.user} onClick={() => play(key)} pause={pause[2] == 'saved' ? pause[0] == key? pause[1]: false: false} img={rand[key]} />
+                <Card key={key} text={track.title} audio={true} modalOnClick={() => openmodal(key)} user={track.user} onClick={() => play(key)} pause={pause[2] == 'saved' ? pause[0] == key? pause[1]: false: false} img={track.img} />
                 )}
-                <Card id='add' />
+                <Card id='add' player={false} />
               </div>
             </div>
           </div>

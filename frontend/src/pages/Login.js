@@ -32,7 +32,7 @@ const Login = () => {
           setLoad(false)
         } else {
           localStorage.setItem('groovyuser', data.username)
-          window.location = "/community";
+          document.getElementById('link').click()
         }
       }
     });
@@ -41,6 +41,7 @@ const Login = () => {
   return (
     <>
       <main>
+        <Link to='/community' id="link" style={{display: 'none'}}></Link>
       <div className="modal loading" id='loader' style={load?{display: 'block'}: {display: 'none'}}>
           <img src={loader} />
         </div>

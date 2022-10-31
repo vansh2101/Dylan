@@ -31,7 +31,8 @@ router.post('/post', (req, res) => {
         _id: new mongoose.Types.ObjectId,
         user: req.body.id,
         title: req.body.title,
-        audio: req.body.audio
+        audio: req.body.audio,
+        img: req.body.img
     })
 
     audio.save()

@@ -638,7 +638,7 @@ function Groovy() {
                     <div className="circle keys1-circle" />
                     <div className="circle keys1-circle" />
                   </div>
-                  keys1
+                  keys
                 </div>
                 <div className="tile pink" id="mallets-tile" onClick={() => play("mallets", "pink")}>
                 <RiSoundModuleFill size={27} id="mallets-icon" />

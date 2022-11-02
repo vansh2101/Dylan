@@ -201,8 +201,8 @@ function Profile() {
                 <p className="username">@{user.username}</p>
                 <div className="follow">
                   <p className="color">02 audios</p>
-                  <p className="color">69 followers</p>
-                  <p className="color">20 following</p>
+                  <p className="color">100 Monthly Listeners</p>
+                  {/* <p className="color">20 following</p> */}
                 </div>
               </div>
             </div>

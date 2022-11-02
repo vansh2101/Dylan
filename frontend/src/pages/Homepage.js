@@ -4,6 +4,8 @@ import Navbar from "../components/Navbar";
 import "../styles/Promotional.css";
 import records from "../static/records.jpg";
 import records2 from "../static/records2.png";
+import aff from "../static/affiliated1.png";
+import aff2 from "../static/affiliated2.png";
 import line from "../static/line.png";
 import about from "../static/about.png";
 import headphones from "../static/headphones.png";
@@ -88,7 +90,7 @@ const Homepage = () => {
       <div className="services">
         <div className="ourprocess">
           <h1>
-            <span className="gradient">Services we Bring</span>
+            <span className="gradient">SERVICES WE BRING</span>
           </h1>
 
           <p>
@@ -131,10 +133,10 @@ const Homepage = () => {
             <span className="gradient">OUR PROCESS</span>
           </h1>
           <p>
-          You choose our service, <br />
-          You put your credit card information, put in the OTP,<br />
-          Just a few simple clicks,<br />
-          and BAM! You are done!<br />
+          You choose our service,
+          You put your credit card information, put in the OTP,
+          Just a few simple clicks,
+          and BAM! You are done!
           Just sit back and relax and plan your awesome rager without any stress about the tunes.
           </p>
         </div>
@@ -159,7 +161,7 @@ const Homepage = () => {
       <div className="mixes">
         <div className="mymixes">
           <h1>
-            <span className="gradient">My mixes</span>
+            <span className="gradient">MY MIXES</span>
           </h1>
         </div>
         <div className="box">
@@ -179,6 +181,30 @@ const Homepage = () => {
         <audio id="beat3" controls loop>
           <source src={"audio/shorty.mp3"} type="audio/mp3" />
         </audio>
+        </div>
+      </div>
+
+      <img src={line} className="line" id="affiliated" />
+
+      <div className="services">
+        <div className="ourprocess">
+          <h1>
+            <span className="gradient">AFFILIATED BY</span>
+          </h1>
+
+          <p>
+          Still not covinced if Dylan can make you groove? Look how many amazing artists lovers love the Dylan Experience
+          </p>
+        </div>
+
+        <div className="service-container affiliated-container">
+          <div className="service">
+            <img src={aff} className="img1" />
+          </div>
+
+          <div className="service">
+            <img src={aff2} className="img2" />
+          </div>
         </div>
       </div>
     </main>

@@ -74,7 +74,7 @@
 }
 
 .ourprocess p{
-    width: 73%;
+    width: 53%;
 }
 .cards{
     display: flex;
@@ -125,4 +125,14 @@
 }
 .service img{
     width: 97%;
+}
+
+
+.affiliated-container{
+    justify-content: space-evenly;
+    align-items: center;
+}
+.affiliated-container img{
+    width: auto;
+    height: auto;
 }

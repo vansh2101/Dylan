@@ -1,4 +1,7 @@
 import React from 'react'
+import {RiInstagramFill, RiFacebookFill, RiTwitterFill, RiMailFill} from 'react-icons/ri'
+import {FaDiscord} from 'react-icons/fa'
+import {HiMail} from 'react-icons/hi'
 
 const Footer = () => {
   return (
@@ -8,11 +11,18 @@ const Footer = () => {
         <div className="newsletter">
             <div className="text">
                 <h2>Sign in for the newsletter</h2>
-                <p className='color'>Sign up to get the latest Dyaln Experience and his new tracks in your inboxes. </p>
+                <p className='color'>Sign up to get the latest Dylan Experience and his new tracks in your inboxes. </p>
             </div>
             <div className="buttons">
                 <input type="email" placeholder='Your email address'/>
                 <button>Join Now</button>
+            </div>
+            <div className='flexbox'>
+                <RiInstagramFill size={30} />
+                <RiFacebookFill size={30} />
+                <RiTwitterFill size={30} />
+                <FaDiscord size={30} />
+                <HiMail size={30} />
             </div>
         </div>
         <div className="links">

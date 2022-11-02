@@ -97,6 +97,7 @@ li a:hover {
     max-height: 105%;
     user-select: none;
     z-index: 0;
+    border-radius: 20px;
 }
 .play {
     display: flex;
@@ -225,39 +226,48 @@ li a:hover {
 
 footer {
     width: 95%;
-    padding: 0 30px;
+    padding: 20px 30px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    margin-top: 10%;
 }
 
 .newsletter {
     display: flex;
     justify-content: center;
     flex-direction: column;
+    margin-left: 2%;
 }
 
 .links {
     display: flex;
-    justify-content: center;
-    /* align-items: center; */
-    width: 45%;
+    justify-content: space-between;
+    width: 47%;
 }
 
 .homies {
-    width: 100%;
+    width: 30%;
 }
 
 .links ul {
     list-style-type: none;
     padding: 0;
-    margin-right: 6%;
+}
+.links h3{
+    font-weight: 500;
+    font-size: 1.3vw;
+}
+.links li{
+    opacity: 0.6;
+    margin-bottom: 4%;
+    font-size: 1.05vw;
+    font-weight: 450;
 }
 
 .text p {
-    max-width: 50%;
+    max-width: 60%;
+    padding: 0;
 }
 
 .buttons {
@@ -266,10 +276,13 @@ footer {
 
 .buttons input {
     background-color: transparent;
-    width: 250px;
+    width: 45%;
     border: 1px solid grey;
     height: 30px;
     text-align: center;
+    color: white;
+    outline: none;
+    border-radius: 7px;
 }
 
 .buttons button {
@@ -279,4 +292,9 @@ footer {
     width: 120px;
     height: 35px;
     margin-left: 40px;
+}
+
+.newsletter .flexbox{
+    width: 68%;
+    margin-top: 7%;
 }
